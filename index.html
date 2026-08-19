@@ -1,0 +1,2554 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>DELA | Tijdelijk niet beschikbaar</title>
+
+  <meta
+    name="description"
+    content="De websites van DELA zijn tijdelijk niet beschikbaar wegens gepland technisch onderhoud."
+  >
+
+  <style>
+    :root {
+      /* DELA */
+      --dela-blue: #007f9f;
+      --dela-blue-dark: #00677f;
+      --dela-blue-deep: #004f63;
+      --dela-blue-light: #e8f5f7;
+
+      --dela-orange: #e99b16;
+      --dela-orange-dark: #d58b0e;
+      --dela-orange-light: #fff4dc;
+
+      --dela-purple: #74436f;
+      --dela-green: #598e70;
+
+      /* Neutral */
+      --white: #ffffff;
+      --background: #f3f7f8;
+      --text: #3e4547;
+      --muted: #667174;
+      --border: #dce4e5;
+      --border-light: #e9eeee;
+
+      --content-width: 1180px;
+      --text-width: 790px;
+
+      /* Rounded DELA component language */
+      --radius-small: 8px;
+      --radius-medium: 16px;
+      --radius-large: 24px;
+      --radius-hero: 28px;
+
+      --shadow-small:
+        0 3px 12px rgba(0, 71, 89, .06);
+
+      --shadow:
+        0 8px 28px rgba(0, 71, 89, .09);
+    }
+
+
+    /* =========================================================
+       BASE
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button,
+    input,
+    a {
+      font: inherit;
+    }
+
+    a {
+      color: var(--dela-blue);
+    }
+
+    a:hover {
+      color: var(--dela-blue-dark);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--dela-orange);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--content-width)
+      );
+
+      margin-inline: auto;
+    }
+
+
+    /* =========================================================
+       UTILITY BAR
+       ========================================================= */
+
+    .utility-bar {
+      background: var(--dela-blue-deep);
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .utility-bar__inner {
+      min-height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      gap: 30px;
+    }
+
+    .utility-item {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .utility-item strong {
+      margin-left: 5px;
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header__inner {
+      height: 82px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .dela-logo {
+      position: relative;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 116px;
+      height: 58px;
+
+      background: var(--dela-blue);
+      color: var(--white);
+
+      text-decoration: none;
+
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: .06em;
+
+      border-radius:
+        0
+        0
+        var(--radius-medium)
+        var(--radius-medium);
+    }
+
+
+    /* =========================================================
+       LANGUAGE SWITCH
+       ========================================================= */
+
+    .languages {
+      display: flex;
+      gap: 4px;
+
+      padding: 4px;
+
+      background: var(--dela-blue-light);
+      border-radius: 999px;
+    }
+
+    .languages button {
+      min-width: 44px;
+      min-height: 38px;
+
+      padding: 8px 12px;
+
+      border: 0;
+      border-radius: 999px;
+
+      background: transparent;
+      color: var(--muted);
+
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .languages button:hover {
+      color: var(--dela-blue);
+    }
+
+    .languages button[aria-pressed="true"] {
+      background: var(--white);
+      color: var(--dela-blue);
+
+      box-shadow: 0 1px 5px rgba(0, 71, 89, .12);
+    }
+
+
+    /* =========================================================
+       PAGE SHELL
+       ========================================================= */
+
+    .maintenance-shell {
+      padding: 42px 0 72px;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          125deg,
+          #dff2f5 0%,
+          #edf8f9 60%,
+          #f7fbfc 100%
+        );
+
+      border-radius: var(--radius-hero);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -80px;
+      right: -110px;
+
+      width: 410px;
+      height: 410px;
+
+      background: rgba(255,255,255,.38);
+      border-radius: 50%;
+
+      content: "";
+    }
+
+    .hero::before {
+      position: absolute;
+      right: 130px;
+      bottom: -150px;
+
+      width: 320px;
+      height: 320px;
+
+      border: 55px solid rgba(0,127,159,.05);
+      border-radius: 50%;
+
+      content: "";
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+
+      max-width: var(--text-width);
+
+      padding: 62px 60px 64px;
+    }
+
+    .eyebrow {
+      margin: 0 0 15px;
+
+      color: var(--dela-blue);
+
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      display: inline-block;
+
+      width: 9px;
+      height: 9px;
+
+      margin-right: 9px;
+
+      background: var(--dela-orange);
+      border-radius: 50%;
+
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+
+      color: var(--dela-blue);
+
+      font-weight: 600;
+    }
+
+    h1 {
+      max-width: 680px;
+
+      margin-bottom: 22px;
+
+      font-size:
+        clamp(2.25rem, 5vw, 3.55rem);
+
+      line-height: 1.06;
+      letter-spacing: -.025em;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+
+      font-size:
+        clamp(1.75rem, 3vw, 2.25rem);
+
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+
+      font-size: 1.3rem;
+      line-height: 1.3;
+    }
+
+    .lead {
+      max-width: 740px;
+
+      margin: 0;
+
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    .lead + .lead {
+      margin-top: 13px;
+    }
+
+    .date {
+      color: var(--dela-blue-deep);
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       SECTIONS
+       ========================================================= */
+
+    .section {
+      padding-top: 56px;
+    }
+
+    .section-heading {
+      max-width: 740px;
+
+      margin-bottom: 28px;
+    }
+
+    .section-heading p {
+      margin: 0;
+
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+
+    /* =========================================================
+       CONTACT CARDS
+       ========================================================= */
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 20px;
+    }
+
+    .contact-card {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      min-height: 365px;
+
+      padding: 32px 28px 28px;
+
+      overflow: hidden;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-large);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .contact-card::before {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 6px;
+
+      background: var(--dela-blue);
+
+      content: "";
+    }
+
+    .contact-card--death::before {
+      background: var(--dela-orange);
+    }
+
+    .contact-card--funeral::before {
+      background: var(--dela-purple);
+    }
+
+    .contact-card__label {
+      display: block;
+
+      margin-bottom: 14px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact-card p {
+      margin-top: 0;
+    }
+
+    .contact-card__content {
+      flex: 1;
+    }
+
+    .phone {
+      display: inline-block;
+
+      margin-top: 8px;
+
+      color: var(--dela-blue);
+
+      font-size: 27px;
+      font-weight: 600;
+
+      line-height: 1.2;
+
+      text-decoration: none;
+    }
+
+    .phone:hover {
+      text-decoration: underline;
+    }
+
+    .opening-hours {
+      margin-top: 6px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .insurance-note {
+      padding: 14px 15px;
+
+      margin: 19px 0 0;
+
+      background: var(--dela-orange-light);
+
+      border-radius: var(--radius-medium);
+
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .insurance-note strong {
+      color: var(--dela-blue-deep);
+    }
+
+
+    /* =========================================================
+       BUTTONS
+       ========================================================= */
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      gap: 12px;
+
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 46px;
+
+      padding: 11px 20px;
+
+      border: 1px solid transparent;
+      border-radius: var(--radius-small);
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 600;
+
+      transition:
+        background .15s ease,
+        color .15s ease,
+        border .15s ease,
+        transform .15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button--primary {
+      background: var(--dela-blue);
+      color: var(--white);
+    }
+
+    .button--primary:hover {
+      background: var(--dela-blue-dark);
+      color: var(--white);
+    }
+
+    .button--orange {
+      background: var(--dela-orange);
+      color: var(--white);
+    }
+
+    .button--orange:hover {
+      background: var(--dela-orange-dark);
+      color: var(--white);
+    }
+
+    .button--outline {
+      border-color: var(--dela-blue);
+
+      background: var(--white);
+      color: var(--dela-blue);
+    }
+
+    .button--outline:hover {
+      background: var(--dela-blue-light);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 6px;
+
+      color: var(--dela-blue);
+
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .text-link::after {
+      content: "›";
+
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================================================
+       FUNERAL PANEL
+       ========================================================= */
+
+    .funeral-panel {
+      overflow: hidden;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-large);
+
+      box-shadow: var(--shadow);
+    }
+
+    .funeral-panel__intro {
+      display: grid;
+
+      grid-template-columns:
+        1.4fr .6fr;
+
+      align-items: center;
+
+      gap: 40px;
+
+      padding: 40px;
+    }
+
+    .funeral-panel__intro p {
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .funeral-panel__visual {
+      position: relative;
+
+      min-height: 180px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--dela-blue),
+          var(--dela-blue-dark)
+        );
+
+      border-radius: var(--radius-medium);
+    }
+
+    .funeral-panel__visual::before {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      width: 105px;
+      height: 105px;
+
+      border: 17px solid rgba(255,255,255,.9);
+      border-left-color: transparent;
+
+      border-radius: 50%;
+
+      transform:
+        translate(-50%, -50%)
+        rotate(-45deg);
+
+      content: "";
+    }
+
+
+    /* =========================================================
+       CALLOUT
+       ========================================================= */
+
+    .callout-wrapper {
+      padding:
+        0
+        40px
+        8px;
+    }
+
+    .callout {
+      display: flex;
+
+      gap: 15px;
+
+      padding: 20px;
+
+      background: var(--dela-orange-light);
+
+      border-radius: var(--radius-medium);
+    }
+
+    .callout__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex: 0 0 30px;
+
+      width: 30px;
+      height: 30px;
+
+      margin-top: 1px;
+
+      background: var(--dela-orange);
+      color: var(--white);
+
+      border-radius: 50%;
+
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .callout p {
+      margin: 0;
+    }
+
+    .callout strong {
+      color: var(--dela-blue-deep);
+    }
+
+
+    /* =========================================================
+       ACCORDION
+       ========================================================= */
+
+    .accordion-wrapper {
+      padding: 24px 40px 40px;
+    }
+
+    .location-accordion {
+      overflow: hidden;
+
+      background: #f9fbfb;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+    }
+
+    .location-accordion summary {
+      position: relative;
+
+      padding: 22px 65px 22px 22px;
+
+      color: var(--dela-blue);
+
+      cursor: pointer;
+
+      list-style: none;
+
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .location-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .location-accordion summary::after {
+      position: absolute;
+
+      top: 50%;
+      right: 18px;
+
+      width: 34px;
+      height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--white);
+
+      border: 1px solid var(--dela-blue);
+      border-radius: 50%;
+
+      transform: translateY(-50%);
+
+      content: "+";
+
+      font-size: 21px;
+      font-weight: 400;
+    }
+
+    .location-accordion[open] summary {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .location-accordion[open] summary::after {
+      content: "−";
+    }
+
+    .locations {
+      padding: 24px 22px 26px;
+
+      background: var(--white);
+    }
+
+
+    /* =========================================================
+       SEARCH
+       ========================================================= */
+
+    .search {
+      max-width: 610px;
+
+      margin-bottom: 22px;
+    }
+
+    .search label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--text);
+
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .search-field {
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      min-height: 50px;
+
+      padding: 11px 48px 11px 15px;
+
+      border: 1px solid #aab8ba;
+      border-radius: var(--radius-small);
+
+      background: var(--white);
+
+      color: var(--text);
+    }
+
+    .search input:focus {
+      border-color: var(--dela-blue);
+
+      outline:
+        3px solid rgba(0,127,159,.12);
+    }
+
+    .search-field::after {
+      position: absolute;
+
+      top: 50%;
+      right: 17px;
+
+      width: 13px;
+      height: 13px;
+
+      border: 2px solid var(--dela-blue);
+      border-radius: 50%;
+
+      transform: translateY(-60%);
+
+      content: "";
+    }
+
+    .search-field::before {
+      position: absolute;
+
+      top: calc(50% + 6px);
+      right: 14px;
+
+      width: 7px;
+      height: 2px;
+
+      background: var(--dela-blue);
+
+      transform: rotate(45deg);
+
+      content: "";
+    }
+
+
+    /* =========================================================
+       TABLE
+       ========================================================= */
+
+    .table-scroll {
+      overflow-x: auto;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+    }
+
+    table {
+      width: 100%;
+      min-width: 800px;
+
+      border-collapse: collapse;
+
+      background: var(--white);
+    }
+
+    th,
+    td {
+      padding: 15px;
+
+      text-align: left;
+      vertical-align: top;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--dela-blue-light);
+      color: var(--dela-blue-deep);
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td {
+      font-size: 15px;
+    }
+
+    td:first-child {
+      color: var(--dela-blue-deep);
+      font-weight: 600;
+    }
+
+    table a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    table a:hover {
+      text-decoration: underline;
+    }
+
+    .placeholder {
+      padding: 30px;
+
+      color: var(--muted);
+
+      text-align: center;
+    }
+
+
+    /* =========================================================
+       CAREERS
+       ========================================================= */
+
+    .careers {
+      position: relative;
+
+      overflow: hidden;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr auto;
+
+      align-items: center;
+
+      gap: 35px;
+
+      padding: 40px;
+
+      background:
+        linear-gradient(
+          125deg,
+          var(--dela-blue),
+          var(--dela-blue-dark)
+        );
+
+      color: var(--white);
+
+      border-radius: var(--radius-large);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .careers::after {
+      position: absolute;
+
+      right: -80px;
+      top: -100px;
+
+      width: 280px;
+      height: 280px;
+
+      border: 45px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+
+      content: "";
+    }
+
+    .careers > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .careers h2 {
+      margin-bottom: 8px;
+
+      color: var(--white);
+    }
+
+    .careers p {
+      max-width: 700px;
+
+      margin: 0;
+
+      color: rgba(255,255,255,.93);
+    }
+
+    .careers .button {
+      background: var(--white);
+      color: var(--dela-blue);
+
+      border-color: var(--white);
+    }
+
+    .careers .button:hover {
+      background: var(--dela-orange);
+      border-color: var(--dela-orange);
+
+      color: var(--white);
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .footer {
+      padding: 34px 0;
+
+      background: var(--dela-blue-deep);
+      color: var(--white);
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      flex-wrap: wrap;
+
+      gap: 20px;
+    }
+
+    .footer p {
+      margin: 0;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       LANGUAGE STATE
+       ========================================================= */
+
+    [data-lang-content] {
+      display: none;
+    }
+
+    [data-lang-content].is-active {
+      display: block;
+    }
+
+    span[data-lang-content].is-active {
+      display: inline;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        min-height: auto;
+      }
+
+      .funeral-panel__intro {
+        grid-template-columns: 1fr;
+      }
+
+      .funeral-panel__visual {
+        min-height: 140px;
+      }
+
+      .careers {
+        grid-template-columns: 1fr;
+      }
+
+      .careers .button {
+        justify-self: start;
+      }
+    }
+
+
+    @media (max-width: 680px) {
+
+      .utility-bar {
+        display: none;
+      }
+
+      .header__inner {
+        height: 70px;
+      }
+
+      .dela-logo {
+        width: 92px;
+        height: 48px;
+
+        font-size: 22px;
+      }
+
+      .maintenance-shell {
+        padding-top: 24px;
+      }
+
+      .hero {
+        border-radius: 20px;
+      }
+
+      .hero__inner {
+        padding: 42px 24px 46px;
+      }
+
+      .lead {
+        font-size: 17px;
+      }
+
+      .section {
+        padding-top: 42px;
+      }
+
+      .contact-card {
+        padding: 28px 22px 24px;
+
+        border-radius: 20px;
+      }
+
+      .funeral-panel {
+        border-radius: 20px;
+      }
+
+      .funeral-panel__intro {
+        padding: 28px 22px 20px;
+      }
+
+      .funeral-panel__visual {
+        display: none;
+      }
+
+      .callout-wrapper {
+        padding:
+          0
+          22px
+          4px;
+      }
+
+      .callout {
+        padding: 17px;
+      }
+
+      .accordion-wrapper {
+        padding: 20px 22px 24px;
+      }
+
+      .locations {
+        padding: 20px 16px;
+      }
+
+      .careers {
+        padding: 30px 22px;
+
+        border-radius: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     TOP CONTACT BAR
+     ========================================================= -->
+
+<div class="utility-bar">
+
+  <div class="container utility-bar__inner">
+
+    <span class="utility-item">
+
+      <span
+        data-lang-content="nl"
+        class="is-active"
+      >
+        Een overlijden melden:
+      </span>
+
+      <span data-lang-content="fr">
+        Signaler un décès :
+      </span>
+
+      <span data-lang-content="en">
+        Report a death:
+      </span>
+
+      <strong>
+        078 05 05 78
+      </strong>
+
+    </span>
+
+
+    <span class="utility-item">
+
+      <span
+        data-lang-content="nl"
+        class="is-active"
+      >
+        Andere vragen:
+      </span>
+
+      <span data-lang-content="fr">
+        Autres questions :
+      </span>
+
+      <span data-lang-content="en">
+        Other questions:
+      </span>
+
+      <strong>
+        02 800 87 87
+      </strong>
+
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="header">
+
+  <div class="container header__inner">
+
+    <!--
+      PRODUCTIE:
+      vervang door officieel DELA inline SVG-logo.
+    -->
+
+    <div
+      class="dela-logo"
+      aria-label="DELA"
+    >
+      DELA
+    </div>
+
+
+    <nav
+      class="languages"
+      aria-label="Taal / Langue / Language"
+    >
+
+      <button
+        type="button"
+        data-language-button="nl"
+        aria-pressed="true"
+      >
+        NL
+      </button>
+
+      <button
+        type="button"
+        data-language-button="fr"
+        aria-pressed="false"
+      >
+        FR
+      </button>
+
+      <button
+        type="button"
+        data-language-button="en"
+        aria-pressed="false"
+      >
+        EN
+      </button>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main class="maintenance-shell">
+
+  <div class="container">
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="hero">
+
+      <div class="hero__inner">
+
+
+        <div
+          data-lang-content="nl"
+          class="is-active"
+        >
+
+          <p class="eyebrow">
+            Gepland technisch onderhoud
+          </p>
+
+          <h1>
+            We zijn even offline.
+            Maar we blijven er voor jou.
+          </h1>
+
+          <p class="lead">
+            Op
+            <span class="date">
+              dinsdag 15 september
+            </span>
+            zijn dela.be, rouwwijzer.be, ingedachten.be
+            en alle websites van onze DELA-uitvaartcentra
+            niet beschikbaar wegens gepland technisch onderhoud.
+          </p>
+
+          <p class="lead">
+            Heb je ons nodig?
+            Ook tijdens het onderhoud helpen we je graag verder
+            via telefoon of e-mail.
+          </p>
+
+        </div>
+
+
+        <div data-lang-content="fr">
+
+          <p class="eyebrow">
+            Maintenance technique planifiée
+          </p>
+
+          <h1>
+            Nous sommes temporairement hors ligne.
+            Mais nous restons à vos côtés.
+          </h1>
+
+          <p class="lead">
+            Le
+            <span class="date">
+              mardi 15 septembre
+            </span>,
+            dela.be, rouwwijzer.be, ingedachten.be et les sites
+            de nos centres funéraires DELA seront indisponibles
+            en raison d’une maintenance technique planifiée.
+          </p>
+
+          <p class="lead">
+            Vous avez besoin de nous ?
+            Nous restons disponibles par téléphone ou par e-mail.
+          </p>
+
+        </div>
+
+
+        <div data-lang-content="en">
+
+          <p class="eyebrow">
+            Scheduled technical maintenance
+          </p>
+
+          <h1>
+            We are temporarily offline.
+            But we are still here for you.
+          </h1>
+
+          <p class="lead">
+            On
+            <span class="date">
+              Tuesday 15 September
+            </span>,
+            dela.be, rouwwijzer.be, ingedachten.be and the websites
+            of our DELA funeral homes will be unavailable due to
+            scheduled technical maintenance.
+          </p>
+
+          <p class="lead">
+            Need us?
+            We remain available by phone or e-mail.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
+
+    <section class="section">
+
+
+      <div
+        class="section-heading is-active"
+        data-lang-content="nl"
+      >
+
+        <h2>
+          Laat ons weten hoe we kunnen helpen
+        </h2>
+
+        <p>
+          Kies hieronder wat voor jou van toepassing is.
+        </p>
+
+      </div>
+
+
+      <div
+        class="section-heading"
+        data-lang-content="fr"
+      >
+
+        <h2>
+          Dites-nous comment nous pouvons vous aider
+        </h2>
+
+        <p>
+          Choisissez la situation qui vous concerne.
+        </p>
+
+      </div>
+
+
+      <div
+        class="section-heading"
+        data-lang-content="en"
+      >
+
+        <h2>
+          Tell us how we can help
+        </h2>
+
+        <p>
+          Choose the option that applies to you.
+        </p>
+
+      </div>
+
+
+
+      <div class="contact-grid">
+
+
+        <!-- =================================================
+             DEATH / INSURED
+             ================================================= -->
+
+        <article
+          class="contact-card contact-card--death"
+        >
+
+          <div class="contact-card__content">
+
+
+            <div
+              data-lang-content="nl"
+              class="is-active"
+            >
+
+              <span class="contact-card__label">
+                Overlijden melden
+              </span>
+
+              <h3>
+                Is een dierbare met een
+                DELA-uitvaartverzekering overleden?
+              </h3>
+
+              <p>
+                Meld het overlijden rechtstreeks bij DELA.
+                We staan dag en nacht voor je klaar.
+              </p>
+
+            </div>
+
+
+            <div data-lang-content="fr">
+
+              <span class="contact-card__label">
+                Signaler un décès
+              </span>
+
+              <h3>
+                Un proche assuré par DELA est décédé ?
+              </h3>
+
+              <p>
+                Signalez le décès directement auprès de DELA.
+                Nous sommes à votre disposition jour et nuit.
+              </p>
+
+            </div>
+
+
+            <div data-lang-content="en">
+
+              <span class="contact-card__label">
+                Report a death
+              </span>
+
+              <h3>
+                Has a loved one insured by DELA passed away?
+              </h3>
+
+              <p>
+                Report the death directly to DELA.
+                We are available day and night.
+              </p>
+
+            </div>
+
+
+            <a
+              class="phone"
+              href="tel:+3278050578"
+            >
+              078 05 05 78
+            </a>
+
+            <div class="opening-hours">
+              24 / 7
+            </div>
+
+
+            <div class="insurance-note">
+
+              <span
+                data-lang-content="nl"
+                class="is-active"
+              >
+                <strong>
+                  Dit nummer is specifiek voor verzekerden.
+                </strong>
+
+                Gebruik het wanneer de overledene een
+                DELA-uitvaartverzekering heeft.
+              </span>
+
+
+              <span data-lang-content="fr">
+
+                <strong>
+                  Ce numéro est réservé aux assurés.
+                </strong>
+
+                Utilisez-le si le défunt disposait d’une
+                assurance obsèques DELA.
+
+              </span>
+
+
+              <span data-lang-content="en">
+
+                <strong>
+                  This number is specifically for insured customers.
+                </strong>
+
+                Use it if the deceased had DELA funeral insurance.
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="actions">
+
+            <a
+              href="tel:+3278050578"
+              class="button button--orange"
+            >
+
+              <span
+                data-lang-content="nl"
+                class="is-active"
+              >
+                Bel DELA
+              </span>
+
+              <span data-lang-content="fr">
+                Appelez DELA
+              </span>
+
+              <span data-lang-content="en">
+                Call DELA
+              </span>
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             GENERAL QUESTIONS
+             ================================================= -->
+
+        <article class="contact-card">
+
+          <div class="contact-card__content">
+
+
+            <div
+              data-lang-content="nl"
+              class="is-active"
+            >
+
+              <span class="contact-card__label">
+                Klantendienst
+              </span>
+
+              <h3>
+                Heb je een andere vraag?
+              </h3>
+
+              <p>
+                Onze DELA Klantendienst helpt je graag verder
+                met vragen over je verzekering of onze dienstverlening.
+              </p>
+
+            </div>
+
+
+            <div data-lang-content="fr">
+
+              <span class="contact-card__label">
+                Service client
+              </span>
+
+              <h3>
+                Vous avez une autre question ?
+              </h3>
+
+              <p>
+                Le Service client DELA se fera un plaisir
+                de vous aider.
+              </p>
+
+            </div>
+
+
+            <div data-lang-content="en">
+
+              <span class="contact-card__label">
+                Customer service
+              </span>
+
+              <h3>
+                Do you have another question?
+              </h3>
+
+              <p>
+                DELA Customer Service will be happy
+                to assist you.
+              </p>
+
+            </div>
+
+
+            <a
+              class="phone"
+              href="tel:+3228008787"
+            >
+              02 800 87 87
+            </a>
+
+
+            <div class="opening-hours">
+
+              <span
+                data-lang-content="nl"
+                class="is-active"
+              >
+                ma–vr · 8.30–17.00 uur
+              </span>
+
+              <span data-lang-content="fr">
+                lun–ven · 8h30–17h00
+              </span>
+
+              <span data-lang-content="en">
+                Mon–Fri · 8:30–17:00
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="actions">
+
+            <a
+              href="tel:+3228008787"
+              class="button button--primary"
+            >
+
+              <span
+                data-lang-content="nl"
+                class="is-active"
+              >
+                Bel ons
+              </span>
+
+              <span data-lang-content="fr">
+                Appelez-nous
+              </span>
+
+              <span data-lang-content="en">
+                Call us
+              </span>
+
+            </a>
+
+
+            <a
+              href="mailto:info@dela.be"
+              class="text-link"
+            >
+              info@dela.be
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             FUNERAL DIRECTOR
+             ================================================= -->
+
+        <article
+          class="contact-card contact-card--funeral"
+        >
+
+          <div class="contact-card__content">
+
+
+            <div
+              data-lang-content="nl"
+              class="is-active"
+            >
+
+              <span class="contact-card__label">
+                Een uitvaart regelen
+              </span>
+
+              <h3>
+                Zoek je een DELA-uitvaartondernemer?
+              </h3>
+
+              <p>
+                Onze uitvaartondernemers staan dag en nacht
+                voor je klaar.
+              </p>
+
+              <p>
+                Ook wanneer de overledene
+                <strong>niet bij DELA verzekerd is</strong>.
+              </p>
+
+            </div>
+
+
+            <div data-lang-content="fr">
+
+              <span class="contact-card__label">
+                Organiser des funérailles
+              </span>
+
+              <h3>
+                Vous cherchez une entreprise
+                de pompes funèbres DELA ?
+              </h3>
+
+              <p>
+                Nos entrepreneurs de pompes funèbres sont
+                à votre disposition jour et nuit,
+                même si le défunt
+                <strong>
+                  n’était pas assuré auprès de DELA
+                </strong>.
+              </p>
+
+            </div>
+
+
+            <div data-lang-content="en">
+
+              <span class="contact-card__label">
+                Arrange a funeral
+              </span>
+
+              <h3>
+                Looking for a DELA funeral director?
+              </h3>
+
+              <p>
+                Our funeral directors are available day and night,
+                even if the deceased
+                <strong>
+                  was not insured with DELA
+                </strong>.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="actions">
+
+            <a
+              href="#uitvaartcentra"
+              class="button button--outline"
+            >
+
+              <span
+                data-lang-content="nl"
+                class="is-active"
+              >
+                Vind een uitvaartcentrum
+              </span>
+
+              <span data-lang-content="fr">
+                Trouver un centre funéraire
+              </span>
+
+              <span data-lang-content="en">
+                Find a funeral home
+              </span>
+
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FUNERAL LOCATIONS
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="uitvaartcentra"
+    >
+
+      <div class="funeral-panel">
+
+
+        <div class="funeral-panel__intro">
+
+          <div>
+
+
+            <div
+              data-lang-content="nl"
+              class="is-active"
+            >
+
+              <h2>
+                Een uitvaartcentrum in je buurt
+              </h2>
+
+              <p>
+                Wil je een uitvaart regelen of rechtstreeks
+                met een uitvaartondernemer spreken?
+                Kies dan een DELA-uitvaartcentrum in je buurt.
+                Je hoeft hiervoor niet bij DELA verzekerd te zijn.
+              </p>
+
+            </div>
+
+
+            <div data-lang-content="fr">
+
+              <h2>
+                Un centre funéraire près de chez vous
+              </h2>
+
+              <p>
+                Vous souhaitez organiser des funérailles ou parler
+                directement à une entreprise de pompes funèbres ?
+                Choisissez un centre funéraire DELA près de chez vous.
+                Il n’est pas nécessaire d’être assuré auprès de DELA.
+              </p>
+
+            </div>
+
+
+            <div data-lang-content="en">
+
+              <h2>
+                A funeral home near you
+              </h2>
+
+              <p>
+                If you would like to arrange a funeral or speak
+                directly to a funeral director, choose a DELA
+                funeral home near you.
+                You do not need to be insured with DELA.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="funeral-panel__visual"
+            aria-hidden="true"
+          ></div>
+
+        </div>
+
+
+
+        <div class="callout-wrapper">
+
+          <div class="callout">
+
+            <span
+              class="callout__icon"
+              aria-hidden="true"
+            >
+              i
+            </span>
+
+
+            <p
+              data-lang-content="nl"
+              class="is-active"
+            >
+
+              <strong>
+                Niet verzekerd bij DELA?
+              </strong>
+
+              Neem rechtstreeks contact op met een
+              uitvaartondernemer hieronder.
+
+              Het nummer
+              <strong>
+                078 05 05 78
+              </strong>
+              is specifiek bedoeld om het overlijden
+              van een DELA-verzekerde te melden.
+
+            </p>
+
+
+            <p data-lang-content="fr">
+
+              <strong>
+                Pas assuré auprès de DELA ?
+              </strong>
+
+              Contactez directement l’un des centres
+              funéraires ci-dessous.
+
+              Le
+              <strong>
+                078 05 05 78
+              </strong>
+              est réservé à la déclaration du décès
+              d’une personne assurée auprès de DELA.
+
+            </p>
+
+
+            <p data-lang-content="en">
+
+              <strong>
+                Not insured with DELA?
+              </strong>
+
+              Contact one of the funeral homes below directly.
+
+              <strong>
+                078 05 05 78
+              </strong>
+              is specifically intended for reporting the death
+              of a person insured with DELA.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="accordion-wrapper">
+
+          <details class="location-accordion">
+
+            <summary>
+
+              <span
+                data-lang-content="nl"
+                class="is-active"
+              >
+                Bekijk alle DELA-uitvaartcentra
+              </span>
+
+              <span data-lang-content="fr">
+                Voir tous les centres funéraires DELA
+              </span>
+
+              <span data-lang-content="en">
+                View all DELA funeral homes
+              </span>
+
+            </summary>
+
+
+            <div class="locations">
+
+
+              <div class="search">
+
+                <label
+                  for="location-search"
+                  data-lang-content="nl"
+                  class="is-active"
+                >
+                  Zoek op uitvaartcentrum, postcode of gemeente
+                </label>
+
+                <label
+                  for="location-search"
+                  data-lang-content="fr"
+                >
+                  Recherchez par centre funéraire,
+                  code postal ou commune
+                </label>
+
+                <label
+                  for="location-search"
+                  data-lang-content="en"
+                >
+                  Search by funeral home, postcode or town
+                </label>
+
+
+                <div class="search-field">
+
+                  <input
+                    id="location-search"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Bijvoorbeeld Antwerpen, 2000 of Timmermans"
+                  >
+
+                </div>
+
+              </div>
+
+
+
+              <div class="table-scroll">
+
+                <table>
+
+                  <thead>
+
+                    <tr>
+
+                      <th>
+                        <span
+                          data-lang-content="nl"
+                          class="is-active"
+                        >
+                          Uitvaartcentrum
+                        </span>
+
+                        <span data-lang-content="fr">
+                          Centre funéraire
+                        </span>
+
+                        <span data-lang-content="en">
+                          Funeral home
+                        </span>
+                      </th>
+
+
+                      <th>
+                        <span
+                          data-lang-content="nl"
+                          class="is-active"
+                        >
+                          Adres
+                        </span>
+
+                        <span data-lang-content="fr">
+                          Adresse
+                        </span>
+
+                        <span data-lang-content="en">
+                          Address
+                        </span>
+                      </th>
+
+
+                      <th>
+                        <span
+                          data-lang-content="nl"
+                          class="is-active"
+                        >
+                          Telefoon
+                        </span>
+
+                        <span data-lang-content="fr">
+                          Téléphone
+                        </span>
+
+                        <span data-lang-content="en">
+                          Phone
+                        </span>
+                      </th>
+
+
+                      <th>
+                        E-mail
+                      </th>
+
+                    </tr>
+
+                  </thead>
+
+
+                  <tbody id="location-table">
+
+                    <!--
+                      ===========================================
+                      HIER KOMEN DE RIJEN UIT HET EXCELBESTAND.
+
+                      Voorbeeld:
+
+                      <tr>
+                        <td>
+                          DELA Uitvaartzorg Timmermans
+                        </td>
+
+                        <td>
+                          Voorbeeldstraat 1<br>
+                          2000 Antwerpen
+                        </td>
+
+                        <td>
+                          <a href="tel:+3212345678">
+                            012 34 56 78
+                          </a>
+                        </td>
+
+                        <td>
+                          <a href="mailto:voorbeeld@dela.be">
+                            voorbeeld@dela.be
+                          </a>
+                        </td>
+                      </tr>
+                      ===========================================
+                    -->
+
+
+                    <tr class="location-placeholder">
+
+                      <td
+                        colspan="4"
+                        class="placeholder"
+                      >
+
+                        <span
+                          data-lang-content="nl"
+                          class="is-active"
+                        >
+                          De lijst met uitvaartcentra wordt hier
+                          toegevoegd vanuit het Excelbestand.
+                        </span>
+
+                        <span data-lang-content="fr">
+                          La liste des centres funéraires sera
+                          ajoutée ici à partir du fichier Excel.
+                        </span>
+
+                        <span data-lang-content="en">
+                          The list of funeral homes will be added
+                          here from the Excel file.
+                        </span>
+
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </div>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CAREERS
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="careers">
+
+
+        <div
+          data-lang-content="nl"
+          class="is-active"
+        >
+
+          <h2>
+            Werken bij DELA?
+          </h2>
+
+          <p>
+            Onze jobsite blijft bereikbaar.
+            Ontdek onze vacatures en vind de job die bij je past.
+          </p>
+
+        </div>
+
+
+        <div data-lang-content="fr">
+
+          <h2>
+            Travailler chez DELA ?
+          </h2>
+
+          <p>
+            Notre site d’emploi reste accessible.
+            Découvrez nos offres d’emploi.
+          </p>
+
+        </div>
+
+
+        <div data-lang-content="en">
+
+          <h2>
+            Work at DELA?
+          </h2>
+
+          <p>
+            Our careers website remains available.
+            Explore our current vacancies.
+          </p>
+
+        </div>
+
+
+        <a
+          class="button"
+          href="https://www.werkenbijdela.be/portal-over-het-bedrijf/vind-je-job"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <span
+            data-lang-content="nl"
+            class="is-active"
+          >
+            Ik wil solliciteren
+          </span>
+
+          <span data-lang-content="fr">
+            Je veux postuler
+          </span>
+
+          <span data-lang-content="en">
+            View our jobs
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="footer">
+
+  <div class="container footer__inner">
+
+    <p>
+      <strong>
+        DELA
+      </strong>
+    </p>
+
+    <p
+      data-lang-content="nl"
+      class="is-active"
+    >
+      Draagt Elkanders Lasten
+    </p>
+
+    <p data-lang-content="fr">
+      DELA
+    </p>
+
+    <p data-lang-content="en">
+      DELA
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+  /* =========================================================
+     LANGUAGE SWITCH
+     ========================================================= */
+
+  (function () {
+
+    const buttons =
+      document.querySelectorAll(
+        "[data-language-button]"
+      );
+
+    const content =
+      document.querySelectorAll(
+        "[data-lang-content]"
+      );
+
+    const search =
+      document.getElementById(
+        "location-search"
+      );
+
+
+    const placeholders = {
+      nl:
+        "Bijvoorbeeld Antwerpen, 2000 of Timmermans",
+
+      fr:
+        "Par exemple Anvers, 2000 ou Timmermans",
+
+      en:
+        "For example Antwerp, 2000 or Timmermans"
+    };
+
+
+    function setLanguage(language) {
+
+      document.documentElement.lang =
+        language;
+
+
+      buttons.forEach(function (button) {
+
+        button.setAttribute(
+          "aria-pressed",
+          button.dataset.languageButton === language
+            ? "true"
+            : "false"
+        );
+
+      });
+
+
+      content.forEach(function (element) {
+
+        element.classList.toggle(
+          "is-active",
+          element.dataset.langContent === language
+        );
+
+      });
+
+
+      if (search) {
+        search.placeholder =
+          placeholders[language];
+      }
+
+    }
+
+
+    buttons.forEach(function (button) {
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          setLanguage(
+            button.dataset.languageButton
+          );
+
+        }
+      );
+
+    });
+
+  })();
+
+
+
+  /* =========================================================
+     LOCATION SEARCH
+     ========================================================= */
+
+  (function () {
+
+    const search =
+      document.getElementById(
+        "location-search"
+      );
+
+    const tableBody =
+      document.getElementById(
+        "location-table"
+      );
+
+
+    if (!search || !tableBody) {
+      return;
+    }
+
+
+    search.addEventListener(
+      "input",
+      function () {
+
+        const query =
+          search.value
+            .trim()
+            .toLocaleLowerCase();
+
+
+        const rows =
+          tableBody.querySelectorAll(
+            "tr:not(.location-placeholder)"
+          );
+
+
+        rows.forEach(function (row) {
+
+          const text =
+            row.textContent
+              .toLocaleLowerCase();
+
+
+          row.hidden =
+            query !== "" &&
+            !text.includes(query);
+
+        });
+
+      }
+    );
+
+  })();
+</script>
+
+</body>
+</html>
