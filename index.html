@@ -75,8 +75,7 @@ gap:30px
 }
 .logo{
 display:inline-flex;
-align-items:center;
-text-decoration:none
+align-items:center
 }
 .logo img{
 display:block;
@@ -499,15 +498,20 @@ main{padding-top:24px}
 
 <header class="header">
   <div class="container header-inner">
-    <a class="logo" href="#" aria-label="DELA">
-      <img src="https://info.dela.be/images/Dela/mailtemplate/lgo_dela.png" alt="DELA">
-    </a>
+
+    <div class="logo">
+      <img
+        src="https://info.dela.be/images/Dela/mailtemplate/lgo_dela.png"
+        alt="DELA"
+      >
+    </div>
 
     <nav class="languages" aria-label="Taal / Langue / Language">
       <button type="button" data-lang="nl" aria-pressed="true">NL</button>
       <button type="button" data-lang="fr" aria-pressed="false">FR</button>
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </nav>
+
   </div>
 </header>
 
@@ -517,17 +521,21 @@ main{padding-top:24px}
 <section class="hero">
   <div class="hero-inner">
     <p class="eyebrow" data-t="maintenance"></p>
+
     <h1 data-t="heroTitle"></h1>
+
     <p class="lead">
       <span data-t="heroBeforeDate"></span>
       <span class="date" data-t="date"></span>
       <span data-t="heroAfterDate"></span>
     </p>
+
     <p class="lead" data-t="heroHelp"></p>
   </div>
 </section>
 
 <section class="section">
+
   <div class="section-heading">
     <h2 data-t="helpTitle"></h2>
     <p data-t="helpText"></p>
@@ -537,88 +545,177 @@ main{padding-top:24px}
 
     <article class="card death">
       <div class="card-content">
+
         <span class="label" data-t="deathLabel"></span>
+
         <h3 data-t="deathTitle"></h3>
+
         <p data-t="deathText"></p>
 
-        <a class="phone" href="tel:+3278050578">078 05 05 78</a>
-        <div class="hours">24 / 7</div>
+        <a class="phone" href="tel:+3278050578">
+          078 05 05 78
+        </a>
+
+        <div class="hours">
+          24 / 7
+        </div>
 
         <div class="note">
           <strong data-t="insuredStrong"></strong>
           <span data-t="insuredText"></span>
         </div>
+
       </div>
 
       <div class="actions">
-        <a href="tel:+3278050578" class="button orange" data-t="callDela"></a>
+        <a
+          href="tel:+3278050578"
+          class="button orange"
+          data-t="callDela"
+        ></a>
       </div>
     </article>
+
 
     <article class="card">
+
       <div class="card-content">
+
         <span class="label" data-t="customerLabel"></span>
+
         <h3 data-t="customerTitle"></h3>
+
         <p data-t="customerText"></p>
 
-        <a class="phone" href="tel:+3228008787">02 800 87 87</a>
+        <a class="phone" href="tel:+3228008787">
+          02 800 87 87
+        </a>
+
         <div class="hours" data-t="customerHours"></div>
+
       </div>
 
       <div class="actions">
-        <a href="tel:+3228008787" class="button primary" data-t="callUs"></a>
-        <a href="mailto:info@dela.be" class="text-link">info@dela.be</a>
+
+        <a
+          href="tel:+3228008787"
+          class="button primary"
+          data-t="callUs"
+        ></a>
+
+        <a
+          href="mailto:info@dela.be"
+          class="text-link"
+        >
+          info@dela.be
+        </a>
+
       </div>
+
     </article>
 
+
     <article class="card funeral">
+
       <div class="card-content">
+
         <span class="label" data-t="funeralLabel"></span>
+
         <h3 data-t="funeralTitle"></h3>
+
         <p data-t="funeralText"></p>
-        <p><span data-t="funeralEven"></span> <strong data-t="funeralNotInsured"></strong>.</p>
+
+        <p>
+          <span data-t="funeralEven"></span>
+          <strong data-t="funeralNotInsured"></strong>.
+        </p>
+
       </div>
 
       <div class="actions">
-        <a href="#uitvaartcentra" class="button outline" data-t="findFuneral"></a>
+
+        <a
+          href="#uitvaartcentra"
+          class="button outline"
+          data-t="findFuneral"
+        ></a>
+
       </div>
+
     </article>
 
   </div>
+
 </section>
 
-<section class="section" id="uitvaartcentra">
+
+<section
+  class="section"
+  id="uitvaartcentra"
+>
+
   <div class="funeral-panel">
 
     <div class="funeral-intro">
+
       <h2 data-t="nearTitle"></h2>
+
       <p data-t="nearText"></p>
+
     </div>
 
+
     <div class="callout-wrap">
+
       <div class="callout">
-        <span class="info" aria-hidden="true">i</span>
+
+        <span
+          class="info"
+          aria-hidden="true"
+        >
+          i
+        </span>
+
         <p>
           <strong data-t="notInsuredStrong"></strong>
           <span data-t="notInsuredText1"></span>
           <strong>078 05 05 78</strong>
           <span data-t="notInsuredText2"></span>
         </p>
+
       </div>
+
     </div>
 
+
     <div class="accordion-wrap">
+
       <details>
+
         <summary data-t="showLocations"></summary>
 
         <div class="locations">
+
           <div class="search">
-            <label for="location-search" data-t="searchLabel"></label>
-            <input id="location-search" type="search" autocomplete="off">
+
+            <label
+              for="location-search"
+              data-t="searchLabel"
+            ></label>
+
+            <input
+              id="location-search"
+              type="search"
+              autocomplete="off"
+            >
+
           </div>
 
+
           <div class="table-scroll">
+
             <table>
+
               <thead>
                 <tr>
                   <th data-t="thName"></th>
@@ -627,25 +724,44 @@ main{padding-top:24px}
                   <th>E-mail</th>
                 </tr>
               </thead>
+
               <tbody id="location-table">
+
                 <tr id="location-placeholder">
-                  <td colspan="4" class="placeholder" data-t="placeholder"></td>
+                  <td
+                    colspan="4"
+                    class="placeholder"
+                    data-t="placeholder"
+                  ></td>
                 </tr>
+
               </tbody>
+
             </table>
+
           </div>
+
         </div>
+
       </details>
+
     </div>
 
   </div>
+
 </section>
 
+
 <section class="section">
+
   <div class="careers">
+
     <div>
+
       <h2 data-t="careerTitle"></h2>
+
       <p data-t="careerText"></p>
+
     </div>
 
     <a
@@ -655,13 +771,20 @@ main{padding-top:24px}
       rel="noopener"
       data-t="careerButton"
     ></a>
+
   </div>
+
 </section>
 
 </div>
 </main>
 
-<footer class="footer" aria-hidden="true"></footer>
+
+<footer
+  class="footer"
+  aria-hidden="true"
+></footer>
+
 
 <script>
 const t={
@@ -801,29 +924,39 @@ careerButton:"View our jobs"
 
 const locations=[
 /*
-Voorbeeld:
 ["DELA Uitvaartzorg Timmermans","Straat 1, 2000 Antwerpen","03 123 45 67","info@voorbeeld.be"]
 */
 ];
 
 function setLang(lang){
 document.documentElement.lang=lang;
+
 document.querySelectorAll("[data-t]").forEach(el=>{
 const key=el.dataset.t;
-if(t[lang][key]!=null) el.textContent=t[lang][key];
+if(t[lang][key]!=null)el.textContent=t[lang][key];
 });
+
 document.querySelectorAll("[data-lang]").forEach(b=>{
-b.setAttribute("aria-pressed",b.dataset.lang===lang?"true":"false");
+b.setAttribute(
+"aria-pressed",
+b.dataset.lang===lang?"true":"false"
+);
 });
-document.getElementById("location-search").placeholder=t[lang].searchPlaceholder;
+
+document.getElementById("location-search").placeholder=
+t[lang].searchPlaceholder;
 }
 
 function renderLocations(filter=""){
 const body=document.getElementById("location-table");
 const q=filter.trim().toLowerCase();
+const lang=document.documentElement.lang;
 
 if(!locations.length){
-body.innerHTML='<tr><td colspan="4" class="placeholder">'+t[document.documentElement.lang].placeholder+'</td></tr>';
+body.innerHTML=
+'<tr><td colspan="4" class="placeholder">'+
+t[lang].placeholder+
+'</td></tr>';
 return;
 }
 
@@ -841,11 +974,15 @@ body.innerHTML=locations
 document.querySelectorAll("[data-lang]").forEach(b=>{
 b.addEventListener("click",()=>{
 setLang(b.dataset.lang);
-renderLocations(document.getElementById("location-search").value);
+renderLocations(
+document.getElementById("location-search").value
+);
 });
 });
 
-document.getElementById("location-search").addEventListener("input",e=>{
+document
+.getElementById("location-search")
+.addEventListener("input",e=>{
 renderLocations(e.target.value);
 });
 
