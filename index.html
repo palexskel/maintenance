@@ -6,7 +6,6 @@
 
   <title>DELA | Tijdelijk niet beschikbaar</title>
 
-  <!-- DELA favicon -->
   <link
     rel="icon"
     type="image/png"
@@ -936,45 +935,14 @@
 
 
     /* =========================================================
-       FOOTER
+       FOOTER BANNER
+       Enkel kleurvlak
        ========================================================= */
 
     .footer {
-      padding: 40px 0;
+      min-height: 110px;
 
       background: var(--dela-blue-deep);
-      color: var(--white);
-    }
-
-    .footer__inner {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-
-      gap: 30px;
-    }
-
-    .footer__brand {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      gap: 14px;
-    }
-
-    .footer__logo {
-      display: block;
-
-      width: 112px;
-      height: auto;
-    }
-
-    .footer p {
-      margin: 0;
-
-      color: var(--white);
-
-      font-size: 14px;
     }
 
 
@@ -1089,8 +1057,8 @@
         border-radius: 20px;
       }
 
-      .footer__logo {
-        width: 96px;
+      .footer {
+        min-height: 80px;
       }
     }
 
@@ -1231,8 +1199,6 @@
       <div class="hero__inner">
 
 
-        <!-- NEDERLANDS -->
-
         <div
           data-lang-content="nl"
           class="is-active"
@@ -1266,8 +1232,6 @@
         </div>
 
 
-        <!-- FRANS -->
-
         <div data-lang-content="fr">
 
           <p class="eyebrow">
@@ -1297,8 +1261,6 @@
 
         </div>
 
-
-        <!-- ENGELS -->
 
         <div data-lang-content="en">
 
@@ -1393,16 +1355,13 @@
       <div class="contact-grid">
 
 
-        <!-- =================================================
-             OVERLIJDEN MELDEN
-             ================================================= -->
+        <!-- OVERLIJDEN MELDEN -->
 
         <article
           class="contact-card contact-card--death"
         >
 
           <div class="contact-card__content">
-
 
             <div
               data-lang-content="nl"
@@ -1549,9 +1508,7 @@
 
 
 
-        <!-- =================================================
-             KLANTENDIENST
-             ================================================= -->
+        <!-- KLANTENDIENST -->
 
         <article class="contact-card">
 
@@ -1682,9 +1639,7 @@
 
 
 
-        <!-- =================================================
-             UITVAARTONDERNEMER
-             ================================================= -->
+        <!-- UITVAARTONDERNEMER -->
 
         <article
           class="contact-card contact-card--funeral"
@@ -1874,8 +1829,6 @@
 
 
 
-        <!-- DUIDELIJK ONDERSCHEID VERZEKERD / NIET VERZEKERD -->
-
         <div class="callout-wrapper">
 
           <div class="callout">
@@ -1951,9 +1904,7 @@
 
 
 
-        <!-- =================================================
-             UITVAARTCENTRA ACCORDION
-             ================================================= -->
+        <!-- UITVAARTCENTRA ACCORDION -->
 
         <div class="accordion-wrapper">
 
@@ -1981,8 +1932,6 @@
 
             <div class="locations">
 
-
-              <!-- ZOEKVELD -->
 
               <div class="search">
 
@@ -2024,8 +1973,6 @@
               </div>
 
 
-
-              <!-- LOCATIETABEL -->
 
               <div class="table-scroll">
 
@@ -2101,17 +2048,12 @@
                   <tbody id="location-table">
 
                     <!--
-                      ====================================================
-                      HIER DE DATA UIT HET EXCELBESTAND TOEVOEGEN
-                      ====================================================
+                      HIER DE DATA UIT HET EXCELBESTAND TOEVOEGEN.
 
-                      Gebruik per uitvaartcentrum bijvoorbeeld:
+                      Voorbeeld:
 
                       <tr>
-
-                        <td>
-                          DELA Uitvaartzorg Timmermans
-                        </td>
+                        <td>DELA Uitvaartzorg Timmermans</td>
 
                         <td>
                           Voorbeeldstraat 1<br>
@@ -2129,7 +2071,6 @@
                             voorbeeld@dela.be
                           </a>
                         </td>
-
                       </tr>
                     -->
 
@@ -2271,43 +2212,13 @@
 
 <!-- =========================================================
      FOOTER
+     Enkel gekleurde banner
      ========================================================= -->
 
-<footer class="footer">
-
-  <div class="container footer__inner">
-
-    <div class="footer__brand">
-
-      <img
-        class="footer__logo"
-        src="https://info.dela.be/images/Dela/mailtemplate/lgo_dela.png"
-        alt="DELA"
-      >
-
-
-      <p
-        data-lang-content="nl"
-        class="is-active"
-      >
-        Draagt Elkanders Lasten
-      </p>
-
-
-      <p data-lang-content="fr">
-        DELA
-      </p>
-
-
-      <p data-lang-content="en">
-        DELA
-      </p>
-
-    </div>
-
-  </div>
-
-</footer>
+<footer
+  class="footer"
+  aria-hidden="true"
+></footer>
 
 
 
