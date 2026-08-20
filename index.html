@@ -6,6 +6,13 @@
 
   <title>DELA | Tijdelijk niet beschikbaar</title>
 
+  <!-- DELA favicon -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://info.dela.be/images/Dela/mailtemplate/lgo_dela.png"
+  >
+
   <meta
     name="description"
     content="De websites van DELA zijn tijdelijk niet beschikbaar wegens gepland technisch onderhoud."
@@ -38,11 +45,8 @@
       --radius-large: 24px;
       --radius-hero: 28px;
 
-      --shadow-small:
-        0 3px 12px rgba(0, 71, 89, .06);
-
-      --shadow:
-        0 8px 28px rgba(0, 71, 89, .09);
+      --shadow-small: 0 3px 12px rgba(0, 71, 89, .06);
+      --shadow: 0 8px 28px rgba(0, 71, 89, .09);
     }
 
 
@@ -119,9 +123,11 @@
 
     .utility-bar__inner {
       min-height: 42px;
+
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
       gap: 30px;
     }
 
@@ -146,9 +152,11 @@
 
     .header__inner {
       min-height: 82px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 30px;
     }
 
@@ -161,11 +169,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: flex-start;
+
       text-decoration: none;
     }
 
     .dela-logo img {
       display: block;
+
       width: 112px;
       height: auto;
     }
@@ -178,14 +188,18 @@
     .languages {
       display: flex;
       gap: 4px;
+
       padding: 4px;
+
       background: var(--dela-blue-light);
+
       border-radius: 999px;
     }
 
     .languages button {
       min-width: 44px;
       min-height: 38px;
+
       padding: 8px 12px;
 
       border: 0;
@@ -195,6 +209,7 @@
       color: var(--muted);
 
       cursor: pointer;
+
       font-weight: 600;
     }
 
@@ -206,13 +221,12 @@
       background: var(--white);
       color: var(--dela-blue);
 
-      box-shadow:
-        0 1px 5px rgba(0, 71, 89, .12);
+      box-shadow: 0 1px 5px rgba(0, 71, 89, .12);
     }
 
 
     /* =========================================================
-       PAGE SHELL
+       PAGE
        ========================================================= */
 
     .maintenance-shell {
@@ -226,19 +240,25 @@
 
     .hero {
       background: var(--dela-blue-light);
+
       border-radius: var(--radius-hero);
+
       box-shadow: var(--shadow-small);
+
       overflow: hidden;
     }
 
     .hero__inner {
       max-width: var(--text-width);
+
       padding: 62px 60px 64px;
     }
 
     .eyebrow {
       margin: 0 0 15px;
+
       color: var(--dela-blue);
+
       font-size: 15px;
       font-weight: 700;
     }
@@ -252,6 +272,7 @@
       margin-right: 9px;
 
       background: var(--dela-orange);
+
       border-radius: 50%;
 
       content: "";
@@ -261,16 +282,18 @@
     h2,
     h3 {
       margin-top: 0;
+
       color: var(--dela-blue);
+
       font-weight: 600;
     }
 
     h1 {
       max-width: 680px;
+
       margin-bottom: 22px;
 
-      font-size:
-        clamp(2.25rem, 5vw, 3.55rem);
+      font-size: clamp(2.25rem, 5vw, 3.55rem);
 
       line-height: 1.06;
       letter-spacing: -.025em;
@@ -279,21 +302,24 @@
     h2 {
       margin-bottom: 14px;
 
-      font-size:
-        clamp(1.75rem, 3vw, 2.25rem);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
 
       line-height: 1.2;
     }
 
     h3 {
       margin-bottom: 10px;
+
       font-size: 1.3rem;
+
       line-height: 1.3;
     }
 
     .lead {
       max-width: 740px;
+
       margin: 0;
+
       font-size: 19px;
       line-height: 1.6;
     }
@@ -304,6 +330,7 @@
 
     .date {
       color: var(--dela-blue-deep);
+
       font-weight: 700;
     }
 
@@ -318,12 +345,15 @@
 
     .section-heading {
       max-width: 740px;
+
       margin-bottom: 28px;
     }
 
     .section-heading p {
       margin: 0;
+
       color: var(--muted);
+
       font-size: 17px;
     }
 
@@ -348,6 +378,7 @@
       flex-direction: column;
 
       min-height: 365px;
+
       padding: 32px 28px 28px;
 
       background: var(--white);
@@ -356,6 +387,7 @@
       border-radius: var(--radius-large);
 
       box-shadow: var(--shadow-small);
+
       overflow: hidden;
     }
 
@@ -383,6 +415,7 @@
 
     .contact-card__label {
       display: block;
+
       margin-bottom: 14px;
 
       color: var(--muted);
@@ -420,15 +453,19 @@
 
     .opening-hours {
       margin-top: 6px;
+
       color: var(--muted);
+
       font-size: 14px;
     }
 
     .insurance-note {
       padding: 14px 15px;
+
       margin: 19px 0 0;
 
       background: var(--dela-orange-light);
+
       border-radius: var(--radius-medium);
 
       font-size: 14px;
@@ -460,6 +497,7 @@
       justify-content: center;
 
       min-height: 46px;
+
       padding: 11px 20px;
 
       border: 1px solid transparent;
@@ -503,7 +541,9 @@
 
     .button--outline {
       background: var(--white);
+
       border-color: var(--dela-blue);
+
       color: var(--dela-blue);
     }
 
@@ -520,11 +560,13 @@
       color: var(--dela-blue);
 
       font-weight: 600;
+
       text-decoration: none;
     }
 
     .text-link::after {
       content: "›";
+
       font-size: 21px;
       line-height: 1;
     }
@@ -545,16 +587,19 @@
       border-radius: var(--radius-large);
 
       box-shadow: var(--shadow);
+
       overflow: hidden;
     }
 
     .funeral-panel__intro {
       display: block;
+
       padding: 40px;
     }
 
     .funeral-panel__intro p {
       max-width: 760px;
+
       margin: 0;
     }
 
@@ -564,19 +609,18 @@
        ========================================================= */
 
     .callout-wrapper {
-      padding:
-        0
-        40px
-        8px;
+      padding: 0 40px 8px;
     }
 
     .callout {
       display: flex;
+
       gap: 15px;
 
       padding: 20px;
 
       background: var(--dela-orange-light);
+
       border-radius: var(--radius-medium);
     }
 
@@ -615,10 +659,7 @@
        ========================================================= */
 
     .accordion-wrapper {
-      padding:
-        24px
-        40px
-        40px;
+      padding: 24px 40px 40px;
     }
 
     .location-accordion {
@@ -633,11 +674,7 @@
     .location-accordion summary {
       position: relative;
 
-      padding:
-        22px
-        65px
-        22px
-        22px;
+      padding: 22px 65px 22px 22px;
 
       color: var(--dela-blue);
 
@@ -688,10 +725,7 @@
     }
 
     .locations {
-      padding:
-        24px
-        22px
-        26px;
+      padding: 24px 22px 26px;
 
       background: var(--white);
     }
@@ -703,6 +737,7 @@
 
     .search {
       max-width: 610px;
+
       margin-bottom: 22px;
     }
 
@@ -723,13 +758,10 @@
 
     .search input {
       width: 100%;
+
       min-height: 50px;
 
-      padding:
-        11px
-        48px
-        11px
-        15px;
+      padding: 11px 48px 11px 15px;
 
       border: 1px solid #aab8ba;
       border-radius: var(--radius-small);
@@ -741,8 +773,7 @@
     .search input:focus {
       border-color: var(--dela-blue);
 
-      outline:
-        3px solid rgba(0,127,159,.12);
+      outline: 3px solid rgba(0,127,159,.12);
     }
 
     .search-field::after {
@@ -792,6 +823,7 @@
 
     table {
       width: 100%;
+
       min-width: 800px;
 
       border-collapse: collapse;
@@ -811,6 +843,7 @@
 
     th {
       background: var(--dela-blue-light);
+
       color: var(--dela-blue-deep);
 
       font-size: 14px;
@@ -827,11 +860,13 @@
 
     td:first-child {
       color: var(--dela-blue-deep);
+
       font-weight: 600;
     }
 
     table a {
       font-weight: 600;
+
       text-decoration: none;
     }
 
@@ -855,8 +890,7 @@
     .careers {
       display: grid;
 
-      grid-template-columns:
-        1fr auto;
+      grid-template-columns: 1fr auto;
 
       align-items: center;
 
@@ -874,24 +908,29 @@
 
     .careers h2 {
       margin-bottom: 8px;
+
       color: var(--white);
     }
 
     .careers p {
       max-width: 700px;
+
       margin: 0;
+
       color: var(--white);
     }
 
     .careers .button {
       background: var(--white);
       color: var(--dela-blue);
+
       border-color: var(--white);
     }
 
     .careers .button:hover {
       background: var(--dela-orange);
       border-color: var(--dela-orange);
+
       color: var(--white);
     }
 
@@ -1003,10 +1042,7 @@
       }
 
       .hero__inner {
-        padding:
-          42px
-          24px
-          46px;
+        padding: 42px 24px 46px;
       }
 
       .lead {
@@ -1018,10 +1054,7 @@
       }
 
       .contact-card {
-        padding:
-          28px
-          22px
-          24px;
+        padding: 28px 22px 24px;
 
         border-radius: 20px;
       }
@@ -1031,17 +1064,11 @@
       }
 
       .funeral-panel__intro {
-        padding:
-          28px
-          22px
-          20px;
+        padding: 28px 22px 20px;
       }
 
       .callout-wrapper {
-        padding:
-          0
-          22px
-          4px;
+        padding: 0 22px 4px;
       }
 
       .callout {
@@ -1049,22 +1076,15 @@
       }
 
       .accordion-wrapper {
-        padding:
-          20px
-          22px
-          24px;
+        padding: 20px 22px 24px;
       }
 
       .locations {
-        padding:
-          20px
-          16px;
+        padding: 20px 16px;
       }
 
       .careers {
-        padding:
-          30px
-          22px;
+        padding: 30px 22px;
 
         border-radius: 20px;
       }
@@ -1211,6 +1231,8 @@
       <div class="hero__inner">
 
 
+        <!-- NEDERLANDS -->
+
         <div
           data-lang-content="nl"
           class="is-active"
@@ -1244,6 +1266,8 @@
         </div>
 
 
+        <!-- FRANS -->
+
         <div data-lang-content="fr">
 
           <p class="eyebrow">
@@ -1273,6 +1297,8 @@
 
         </div>
 
+
+        <!-- ENGELS -->
 
         <div data-lang-content="en">
 
@@ -1367,7 +1393,9 @@
       <div class="contact-grid">
 
 
-        <!-- OVERLIJDEN MELDEN -->
+        <!-- =================================================
+             OVERLIJDEN MELDEN
+             ================================================= -->
 
         <article
           class="contact-card contact-card--death"
@@ -1375,10 +1403,12 @@
 
           <div class="contact-card__content">
 
+
             <div
               data-lang-content="nl"
               class="is-active"
             >
+
               <span class="contact-card__label">
                 Overlijden melden
               </span>
@@ -1392,10 +1422,12 @@
                 Meld het overlijden rechtstreeks bij DELA.
                 We staan dag en nacht voor je klaar.
               </p>
+
             </div>
 
 
             <div data-lang-content="fr">
+
               <span class="contact-card__label">
                 Signaler un décès
               </span>
@@ -1409,10 +1441,12 @@
                 Signalez le décès directement auprès de DELA.
                 Nous sommes à votre disposition jour et nuit.
               </p>
+
             </div>
 
 
             <div data-lang-content="en">
+
               <span class="contact-card__label">
                 Report a death
               </span>
@@ -1426,6 +1460,7 @@
                 Report the death directly to DELA.
                 We are available day and night.
               </p>
+
             </div>
 
 
@@ -1435,6 +1470,7 @@
             >
               078 05 05 78
             </a>
+
 
             <div class="opening-hours">
               24 / 7
@@ -1455,21 +1491,27 @@
                 DELA-uitvaartverzekering heeft.
               </span>
 
+
               <span data-lang-content="fr">
+
                 <strong>
                   Ce numéro est spécifiquement destiné aux assurés.
                 </strong>
 
                 Utilisez-le si le défunt disposait d’une
                 assurance obsèques DELA.
+
               </span>
 
+
               <span data-lang-content="en">
+
                 <strong>
                   This number is specifically for insured customers.
                 </strong>
 
                 Use it if the deceased had DELA funeral insurance.
+
               </span>
 
             </div>
@@ -1483,6 +1525,7 @@
               href="tel:+3278050578"
               class="button button--orange"
             >
+
               <span
                 data-lang-content="nl"
                 class="is-active"
@@ -1497,6 +1540,7 @@
               <span data-lang-content="en">
                 Call DELA
               </span>
+
             </a>
 
           </div>
@@ -1505,16 +1549,20 @@
 
 
 
-        <!-- KLANTENDIENST -->
+        <!-- =================================================
+             KLANTENDIENST
+             ================================================= -->
 
         <article class="contact-card">
 
           <div class="contact-card__content">
 
+
             <div
               data-lang-content="nl"
               class="is-active"
             >
+
               <span class="contact-card__label">
                 Klantendienst
               </span>
@@ -1527,10 +1575,12 @@
                 Onze DELA Klantendienst helpt je graag verder
                 met vragen over je verzekering of onze dienstverlening.
               </p>
+
             </div>
 
 
             <div data-lang-content="fr">
+
               <span class="contact-card__label">
                 Service client
               </span>
@@ -1543,10 +1593,12 @@
                 Le Service client DELA se fera un plaisir
                 de vous aider.
               </p>
+
             </div>
 
 
             <div data-lang-content="en">
+
               <span class="contact-card__label">
                 Customer service
               </span>
@@ -1558,6 +1610,7 @@
               <p>
                 DELA Customer Service will be happy to assist you.
               </p>
+
             </div>
 
 
@@ -1597,6 +1650,7 @@
               href="tel:+3228008787"
               class="button button--primary"
             >
+
               <span
                 data-lang-content="nl"
                 class="is-active"
@@ -1611,6 +1665,7 @@
               <span data-lang-content="en">
                 Call us
               </span>
+
             </a>
 
 
@@ -1627,7 +1682,9 @@
 
 
 
-        <!-- UITVAARTONDERNEMER -->
+        <!-- =================================================
+             UITVAARTONDERNEMER
+             ================================================= -->
 
         <article
           class="contact-card contact-card--funeral"
@@ -1635,10 +1692,12 @@
 
           <div class="contact-card__content">
 
+
             <div
               data-lang-content="nl"
               class="is-active"
             >
+
               <span class="contact-card__label">
                 Een uitvaart regelen
               </span>
@@ -1656,10 +1715,12 @@
                 Ook wanneer de overledene
                 <strong>niet bij DELA verzekerd is</strong>.
               </p>
+
             </div>
 
 
             <div data-lang-content="fr">
+
               <span class="contact-card__label">
                 Organiser des funérailles
               </span>
@@ -1679,10 +1740,12 @@
                   n’était pas assuré auprès de DELA
                 </strong>.
               </p>
+
             </div>
 
 
             <div data-lang-content="en">
+
               <span class="contact-card__label">
                 Arrange a funeral
               </span>
@@ -1702,6 +1765,7 @@
                   was not insured with DELA
                 </strong>.
               </p>
+
             </div>
 
           </div>
@@ -1713,6 +1777,7 @@
               href="#uitvaartcentra"
               class="button button--outline"
             >
+
               <span
                 data-lang-content="nl"
                 class="is-active"
@@ -1727,6 +1792,7 @@
               <span data-lang-content="en">
                 Find a funeral home
               </span>
+
             </a>
 
           </div>
@@ -1753,10 +1819,12 @@
 
         <div class="funeral-panel__intro">
 
+
           <div
             data-lang-content="nl"
             class="is-active"
           >
+
             <h2>
               Een uitvaartcentrum in je buurt
             </h2>
@@ -1767,10 +1835,12 @@
               Kies dan een DELA-uitvaartcentrum in je buurt.
               Je hoeft hiervoor niet bij DELA verzekerd te zijn.
             </p>
+
           </div>
 
 
           <div data-lang-content="fr">
+
             <h2>
               Un centre funéraire près de chez vous
             </h2>
@@ -1781,10 +1851,12 @@
               Choisissez un centre funéraire DELA près de chez vous.
               Il n’est pas nécessaire d’être assuré auprès de DELA.
             </p>
+
           </div>
 
 
           <div data-lang-content="en">
+
             <h2>
               A funeral home near you
             </h2>
@@ -1795,11 +1867,14 @@
               home near you.
               You do not need to be insured with DELA.
             </p>
+
           </div>
 
         </div>
 
 
+
+        <!-- DUIDELIJK ONDERSCHEID VERZEKERD / NIET VERZEKERD -->
 
         <div class="callout-wrapper">
 
@@ -1817,6 +1892,7 @@
               data-lang-content="nl"
               class="is-active"
             >
+
               <strong>
                 Niet verzekerd bij DELA?
               </strong>
@@ -1830,10 +1906,12 @@
               </strong>
               is specifiek bedoeld om het overlijden van een
               DELA-verzekerde te melden.
+
             </p>
 
 
             <p data-lang-content="fr">
+
               <strong>
                 Pas assuré auprès de DELA ?
               </strong>
@@ -1847,10 +1925,12 @@
               </strong>
               est spécifiquement destiné à signaler le décès
               d’une personne assurée auprès de DELA.
+
             </p>
 
 
             <p data-lang-content="en">
+
               <strong>
                 Not insured with DELA?
               </strong>
@@ -1862,6 +1942,7 @@
               </strong>
               is specifically intended for reporting the death
               of a person insured with DELA.
+
             </p>
 
           </div>
@@ -1869,6 +1950,10 @@
         </div>
 
 
+
+        <!-- =================================================
+             UITVAARTCENTRA ACCORDION
+             ================================================= -->
 
         <div class="accordion-wrapper">
 
@@ -1896,6 +1981,8 @@
 
             <div class="locations">
 
+
+              <!-- ZOEKVELD -->
 
               <div class="search">
 
@@ -1937,6 +2024,8 @@
               </div>
 
 
+
+              <!-- LOCATIETABEL -->
 
               <div class="table-scroll">
 
@@ -2012,12 +2101,17 @@
                   <tbody id="location-table">
 
                     <!--
-                      HIER DE DATA UIT HET EXCELBESTAND TOEVOEGEN.
+                      ====================================================
+                      HIER DE DATA UIT HET EXCELBESTAND TOEVOEGEN
+                      ====================================================
 
-                      Voorbeeld:
+                      Gebruik per uitvaartcentrum bijvoorbeeld:
 
                       <tr>
-                        <td>DELA Uitvaartzorg Timmermans</td>
+
+                        <td>
+                          DELA Uitvaartzorg Timmermans
+                        </td>
 
                         <td>
                           Voorbeeldstraat 1<br>
@@ -2035,6 +2129,7 @@
                             voorbeeld@dela.be
                           </a>
                         </td>
+
                       </tr>
                     -->
 
@@ -2099,6 +2194,7 @@
           data-lang-content="nl"
           class="is-active"
         >
+
           <h2>
             Werken bij DELA?
           </h2>
@@ -2107,10 +2203,12 @@
             Onze jobsite blijft bereikbaar.
             Ontdek onze vacatures en vind de job die bij je past.
           </p>
+
         </div>
 
 
         <div data-lang-content="fr">
+
           <h2>
             Travailler chez DELA ?
           </h2>
@@ -2119,10 +2217,12 @@
             Notre site d’emploi reste accessible.
             Découvrez nos offres d’emploi.
           </p>
+
         </div>
 
 
         <div data-lang-content="en">
+
           <h2>
             Work at DELA?
           </h2>
@@ -2131,6 +2231,7 @@
             Our careers website remains available.
             Explore our current vacancies.
           </p>
+
         </div>
 
 
@@ -2140,6 +2241,7 @@
           target="_blank"
           rel="noopener"
         >
+
           <span
             data-lang-content="nl"
             class="is-active"
@@ -2154,6 +2256,7 @@
           <span data-lang-content="en">
             View our jobs
           </span>
+
         </a>
 
       </div>
@@ -2232,6 +2335,7 @@
 
 
     const placeholders = {
+
       nl:
         "Bijvoorbeeld Antwerpen, 2000 of Timmermans",
 
@@ -2240,6 +2344,7 @@
 
       en:
         "For example Antwerp, 2000 or Timmermans"
+
     };
 
 
@@ -2272,8 +2377,10 @@
 
 
       if (search) {
+
         search.placeholder =
           placeholders[language];
+
       }
 
     }
