@@ -113,7 +113,6 @@ box-shadow:var(--shadow);
 overflow:hidden
 }
 .hero-inner{
-/*max-width:790px;*/
 padding:62px 60px 64px
 }
 .eyebrow{
@@ -137,7 +136,6 @@ color:var(--blue);
 font-weight:600
 }
 h1{
-/*max-width:680px;*/
 margin-bottom:22px;
 font-size:clamp(2.25rem,5vw,3.55rem);
 line-height:1.06;
@@ -154,16 +152,11 @@ font-size:1.3rem;
 line-height:1.3
 }
 .lead{
-/*max-width:740px;*/
 margin:0;
 font-size:19px;
 line-height:1.6
 }
 .lead+.lead{margin-top:13px}
-.date{
-color:var(--blue-deep);
-font-weight:700
-}
 .section{padding-top:56px}
 .section-heading{
 max-width:740px;
@@ -520,17 +513,15 @@ main{padding-top:24px}
 
 <section class="hero">
   <div class="hero-inner">
+
     <p class="eyebrow" data-t="maintenance"></p>
 
     <h1 data-t="heroTitle"></h1>
 
-    <p class="lead">
-      <span data-t="heroBeforeDate"></span>
-      <span class="date" data-t="date"></span>
-      <span data-t="heroAfterDate"></span>
-    </p>
+    <p class="lead" data-t="heroDateText"></p>
 
     <p class="lead" data-t="heroHelp"></p>
+
   </div>
 </section>
 
@@ -544,6 +535,7 @@ main{padding-top:24px}
   <div class="contact-grid">
 
     <article class="card death">
+
       <div class="card-content">
 
         <span class="label" data-t="deathLabel"></span>
@@ -568,12 +560,15 @@ main{padding-top:24px}
       </div>
 
       <div class="actions">
+
         <a
           href="tel:+3278050578"
           class="button orange"
           data-t="callDela"
         ></a>
+
       </div>
+
     </article>
 
 
@@ -793,9 +788,7 @@ topDeath:"Een verzekerd overlijden melden: ",
 topOther:"Andere vragen: ",
 maintenance:"Gepland technisch onderhoud",
 heroTitle:"We zijn even offline, maar we blijven er voor jou.",
-heroBeforeDate:"Op ",
-date:"dinsdag 15 september",
-heroAfterDate:" zijn dela.be, rouwwijzer.be, ingedachten.be en alle websites van onze DELA-uitvaartcentra niet beschikbaar wegens gepland technisch onderhoud.",
+heroDateText:"Op dinsdag 15 september zijn dela.be, rouwwijzer.be, ingedachten.be en alle websites van onze DELA-uitvaartcentra niet beschikbaar wegens gepland technisch onderhoud.",
 heroHelp:"Heb je ons nodig? Ook tijdens het onderhoud helpen we je graag verder via telefoon of e-mail.",
 helpTitle:"Laat ons weten hoe we kunnen helpen",
 helpText:"Kies hieronder wat voor jou van toepassing is.",
@@ -837,9 +830,7 @@ topDeath:"Signaler un décès assuré : ",
 topOther:"Autres questions : ",
 maintenance:"Maintenance technique planifiée",
 heroTitle:"Nous sommes temporairement hors ligne, mais nous restons à vos côtés.",
-heroBeforeDate:"Le ",
-date:"mardi 15 septembre",
-heroAfterDate:", dela.be, rouwwijzer.be, ingedachten.be et les sites de nos centres funéraires DELA seront indisponibles en raison d’une maintenance technique planifiée.",
+heroDateText:"Le mardi 15 septembre, dela.be, rouwwijzer.be, ingedachten.be et les sites de nos centres funéraires DELA seront indisponibles en raison d’une maintenance technique planifiée.",
 heroHelp:"Vous avez besoin de nous ? Nous restons disponibles par téléphone ou par e-mail.",
 helpTitle:"Dites-nous comment nous pouvons vous aider",
 helpText:"Choisissez la situation qui vous concerne.",
@@ -881,9 +872,7 @@ topDeath:"Report an insured death: ",
 topOther:"Other questions: ",
 maintenance:"Scheduled technical maintenance",
 heroTitle:"We are temporarily offline, but we are still here for you.",
-heroBeforeDate:"On ",
-date:"Tuesday 15 September",
-heroAfterDate:", dela.be, rouwwijzer.be, ingedachten.be and the websites of our DELA funeral homes will be unavailable due to scheduled technical maintenance.",
+heroDateText:"On Tuesday 15 September, dela.be, rouwwijzer.be, ingedachten.be and the websites of our DELA funeral homes will be unavailable due to scheduled technical maintenance.",
 heroHelp:"Need us? We remain available by phone or e-mail.",
 helpTitle:"Tell us how we can help",
 helpText:"Choose the option that applies to you.",
