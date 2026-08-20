@@ -293,6 +293,19 @@ overflow:hidden
 max-width:760px;
 margin:0
 }
+.map-wrap{
+margin:0 40px 24px;
+overflow:hidden;
+border:1px solid var(--border);
+border-radius:var(--r16);
+background:var(--white)
+}
+.map-wrap iframe{
+display:block;
+width:100%;
+height:500px;
+border:0
+}
 .callout-wrap{padding:0 40px 8px}
 .callout{
 display:flex;
@@ -457,6 +470,7 @@ background:var(--blue-deep)
 .card{min-height:auto}
 .careers{grid-template-columns:1fr}
 .careers .button{justify-self:start}
+.map-wrap iframe{height:440px}
 }
 @media(max-width:680px){
 .utility-bar{display:none}
@@ -470,6 +484,8 @@ main{padding-top:24px}
 .card{padding:28px 22px 24px;border-radius:20px}
 .funeral-panel{border-radius:20px}
 .funeral-intro{padding:28px 22px 20px}
+.map-wrap{margin:0 22px 20px}
+.map-wrap iframe{height:380px}
 .callout-wrap{padding:0 22px 4px}
 .callout{padding:17px}
 .accordion-wrap{padding:20px 22px 24px}
@@ -560,13 +576,11 @@ main{padding-top:24px}
       </div>
 
       <div class="actions">
-
         <a
           href="tel:+3278050578"
           class="button orange"
           data-t="callDela"
         ></a>
-
       </div>
 
     </article>
@@ -656,6 +670,19 @@ main{padding-top:24px}
       <h2 data-t="nearTitle"></h2>
 
       <p data-t="nearText"></p>
+
+    </div>
+
+
+    <div class="map-wrap">
+
+      <iframe
+        src="https://www.google.com/maps/d/embed?mid=14DKKrt9r9X6SNQWIbZDPHr6fBjt4QBg"
+        title="DELA-uitvaartlocaties"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
 
     </div>
 
