@@ -300,22 +300,8 @@ max-width:760px;
 margin:0
 }
 
-.map{
-margin:0 40px 24px;
-overflow:hidden;
-border:1px solid #dce4e5;
-border-radius:16px
-}
-
-.map iframe{
-display:block;
-width:100%;
-height:500px;
-border:0
-}
-
 .aw{
-padding:0 40px 40px
+padding:0 40px 24px
 }
 
 details{
@@ -437,6 +423,20 @@ font-weight:600;
 text-decoration:none
 }
 
+.map{
+margin:0 40px 40px;
+overflow:hidden;
+border:1px solid #dce4e5;
+border-radius:16px
+}
+
+.map iframe{
+display:block;
+width:100%;
+height:500px;
+border:0
+}
+
 .jobs{
 display:grid;
 grid-template-columns:1fr auto;
@@ -521,16 +521,8 @@ border-radius:20px
 padding:28px 22px 20px
 }
 
-.map{
-margin:0 22px 20px
-}
-
-.map iframe{
-height:380px
-}
-
 .aw{
-padding:0 22px 24px
+padding:0 22px 20px
 }
 
 .loc{
@@ -548,6 +540,14 @@ font-weight:600
 
 .scroll{
 box-shadow:inset -12px 0 10px -12px #667174
+}
+
+.map{
+margin:0 22px 24px
+}
+
+.map iframe{
+height:380px
 }
 
 .jobs{
@@ -607,6 +607,7 @@ min-height:80px
 
   <section class="hero">
     <div>
+
       <p class="ey" data-t="maintenance"></p>
 
       <h1 data-t="heroTitle"></h1>
@@ -615,6 +616,7 @@ min-height:80px
         class="lead"
         data-t="heroDateText"
       ></p>
+
     </div>
   </section>
 
@@ -759,18 +761,6 @@ min-height:80px
         <p data-t="nearText"></p>
       </div>
 
-      <div class="map">
-
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=14DKKrt9r9X6SNQWIbZDPHr6fBjt4QBg"
-          title="DELA-uitvaartlocaties"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen
-        ></iframe>
-
-      </div>
-
       <div class="aw">
 
         <details>
@@ -823,6 +813,18 @@ min-height:80px
 
       </div>
 
+      <div class="map">
+
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=14DKKrt9r9X6SNQWIbZDPHr6fBjt4QBg"
+          title="DELA-uitvaartlocaties"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+
+      </div>
+
     </div>
 
   </section>
@@ -870,7 +872,7 @@ insuredText:"Gebruik het wanneer de overledene een DELA-uitvaartverzekering heef
 callDela:"Bel DELA",
 funeralLabel:"Een uitvaart regelen",
 funeralTitle:"Zoek je een DELA-uitvaartondernemer?",
-funeralText:"Onze uitvaartondernemers staan voor je klaar wanneer je een uitvaart wil regelen.",
+funeralText:"Onze uitvaartondernemers staan voor je klaar wanneer je een uitvaart wil regelen, bloemen wil bestellen voor een uitvaart of wilt condoleren.",
 funeralEven:"Ook wanneer de overledene",
 funeralNotInsured:"niet bij DELA verzekerd is",
 findFuneral:"Vind een uitvaartcentrum",
@@ -880,7 +882,7 @@ customerText:"Onze DELA Klantendienst helpt je graag verder met vragen over je v
 customerHours:"ma–vr · 8.30–17.00 uur",
 callUs:"Bel ons",
 nearTitle:"Een uitvaartcentrum in je buurt",
-nearText:"Wil je een uitvaart regelen of rechtstreeks met een uitvaartondernemer spreken? Kies dan een DELA-uitvaartcentrum in je buurt. Je hoeft hiervoor niet bij DELA verzekerd te zijn.",
+nearText:"Wil je een uitvaart regelen, bloemen bestellen voor een uitvaart, condoleren of rechtstreeks met een uitvaartondernemer spreken? Kies dan een DELA-uitvaartcentrum in je buurt. Je hoeft hiervoor niet bij DELA verzekerd te zijn.",
 showLocations:"Bekijk alle DELA-uitvaartcentra",
 searchLabel:"Zoek op uitvaartcentrum, postcode of gemeente",
 searchPlaceholder:"Bijvoorbeeld Antwerpen, 2000 of Timmermans",
@@ -908,7 +910,7 @@ insuredText:"Utilisez-le si le défunt disposait d’une assurance obsèques DEL
 callDela:"Appelez DELA",
 funeralLabel:"Organiser des funérailles",
 funeralTitle:"Vous cherchez une entreprise de pompes funèbres DELA ?",
-funeralText:"Nos entreprises de pompes funèbres sont à votre disposition pour vous aider à organiser les funérailles.",
+funeralText:"Nos entreprises de pompes funèbres sont à votre disposition pour vous aider à organiser des funérailles, commander des fleurs pour des funérailles ou présenter vos condoléances.",
 funeralEven:"Même si le défunt",
 funeralNotInsured:"n’était pas assuré auprès de DELA",
 findFuneral:"Trouver un centre funéraire",
@@ -918,7 +920,7 @@ customerText:"Le Service client DELA se fera un plaisir de vous aider.",
 customerHours:"lun–ven · 8h30–17h00",
 callUs:"Appelez-nous",
 nearTitle:"Un centre funéraire près de chez vous",
-nearText:"Vous souhaitez organiser des funérailles ou parler directement à une entreprise de pompes funèbres ? Choisissez un centre funéraire DELA près de chez vous. Il n’est pas nécessaire d’être assuré auprès de DELA.",
+nearText:"Vous souhaitez organiser des funérailles, commander des fleurs pour des funérailles, présenter vos condoléances ou parler directement à une entreprise de pompes funèbres ? Choisissez un centre funéraire DELA près de chez vous. Il n’est pas nécessaire d’être assuré auprès de DELA.",
 showLocations:"Voir tous les centres funéraires DELA",
 searchLabel:"Recherchez par centre funéraire, code postal ou commune",
 searchPlaceholder:"Par exemple Anvers, 2000 ou Timmermans",
@@ -946,7 +948,7 @@ insuredText:"Use it if the deceased had DELA funeral insurance.",
 callDela:"Call DELA",
 funeralLabel:"Arrange a funeral",
 funeralTitle:"Looking for a DELA funeral director?",
-funeralText:"Our funeral directors are here to help you arrange a funeral.",
+funeralText:"Our funeral directors are here to help you arrange a funeral, order flowers for a funeral or offer your condolences.",
 funeralEven:"Even if the deceased",
 funeralNotInsured:"was not insured with DELA",
 findFuneral:"Find a funeral home",
@@ -956,7 +958,7 @@ customerText:"DELA Customer Service will be happy to assist you.",
 customerHours:"Mon–Fri · 8:30–17:00",
 callUs:"Call us",
 nearTitle:"A funeral home near you",
-nearText:"If you would like to arrange a funeral or speak directly to a funeral director, choose a DELA funeral home near you. You do not need to be insured with DELA.",
+nearText:"Would you like to arrange a funeral, order flowers for a funeral, offer your condolences or speak directly to a funeral director? Choose a DELA funeral home near you. You do not need to be insured with DELA.",
 showLocations:"View all DELA funeral homes",
 searchLabel:"Search by funeral home, postcode or town",
 searchPlaceholder:"For example Antwerp, 2000 or Timmermans",
