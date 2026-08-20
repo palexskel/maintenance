@@ -1,1010 +1,1182 @@
 <!doctype html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DELA | Maintenance</title>
-<link rel="icon" type="image/png" href="https://info.dela.be/images/Dela/mailtemplate/lgo_dela.png">
-<meta name="description" content="De websites van DELA zijn tijdelijk niet beschikbaar wegens gepland technisch onderhoud.">
-<style>
-:root{
---blue:#007f9f;
---blue-dark:#00677f;
---blue-deep:#004f63;
---blue-light:#e8f5f7;
---orange:#e99b16;
---orange-dark:#d58b0e;
---orange-light:#fff4dc;
---purple:#74436f;
---white:#fff;
---bg:#f3f7f8;
---text:#3e4547;
---muted:#667174;
---border:#dce4e5;
---r8:8px;
---r16:16px;
---r24:24px;
---r28:28px;
---shadow:0 3px 12px rgba(0,71,89,.06)
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-font-size:16px;
-line-height:1.55;
--webkit-font-smoothing:antialiased
-}
-button,input,a{font:inherit}
-a{color:var(--blue)}
-a:hover{color:var(--blue-dark)}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
-outline:3px solid var(--orange);
-outline-offset:3px
-}
-.container{
-width:min(calc(100% - 40px),1180px);
-margin:auto
-}
-.utility-bar{
-background:var(--blue-deep);
-color:var(--white);
-font-size:14px
-}
-.utility-inner{
-min-height:42px;
-display:flex;
-align-items:center;
-justify-content:flex-end;
-gap:30px
-}
-.utility-item strong{margin-left:5px}
-.header{
-background:var(--white);
-border-bottom:1px solid var(--border)
-}
-.header-inner{
-min-height:82px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:30px
-}
-.logo{
-display:inline-flex;
-align-items:center
-}
-.logo img{
-display:block;
-width:112px;
-height:auto
-}
-.languages{
-display:flex;
-gap:4px;
-padding:4px;
-background:var(--blue-light);
-border-radius:999px
-}
-.languages button{
-min-width:44px;
-min-height:38px;
-padding:8px 12px;
-border:0;
-border-radius:999px;
-background:transparent;
-color:var(--muted);
-cursor:pointer;
-font-weight:600
-}
-.languages button[aria-pressed="true"]{
-background:var(--white);
-color:var(--blue);
-box-shadow:0 1px 5px rgba(0,71,89,.12)
-}
-main{padding:42px 0 72px}
-.hero{
-background:var(--blue-light);
-border-radius:var(--r28);
-box-shadow:var(--shadow);
-overflow:hidden
-}
-.hero-inner{
-padding:62px 60px 64px
-}
-.eyebrow{
-margin:0 0 15px;
-color:var(--blue);
-font-size:15px;
-font-weight:700
-}
-.eyebrow:before{
-content:"";
-display:inline-block;
-width:9px;
-height:9px;
-margin-right:9px;
-background:var(--orange);
-border-radius:50%
-}
-h1,h2,h3{
-margin-top:0;
-color:var(--blue);
-font-weight:600
-}
-h1{
-margin-bottom:22px;
-font-size:clamp(2.25rem,5vw,3.55rem);
-line-height:1.06;
-letter-spacing:-.025em
-}
-h2{
-margin-bottom:14px;
-font-size:clamp(1.75rem,3vw,2.25rem);
-line-height:1.2
-}
-h3{
-margin-bottom:10px;
-font-size:1.3rem;
-line-height:1.3
-}
-.lead{
-margin:0;
-font-size:19px;
-line-height:1.6
-}
-.lead+.lead{margin-top:13px}
-.section{padding-top:56px}
-.section-heading{
-max-width:740px;
-margin-bottom:28px
-}
-.section-heading p{
-margin:0;
-color:var(--muted);
-font-size:17px
-}
-.contact-grid{
-display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
-gap:20px
-}
-.card{
-position:relative;
-display:flex;
-flex-direction:column;
-min-height:365px;
-padding:32px 28px 28px;
-background:var(--white);
-border:1px solid var(--border);
-border-radius:var(--r24);
-box-shadow:var(--shadow);
-overflow:hidden
-}
-.card:before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-right:0;
-height:6px;
-background:var(--blue)
-}
-.card.death:before{background:var(--orange)}
-.card.funeral:before{background:var(--purple)}
-.card-content{flex:1}
-.label{
-display:block;
-margin-bottom:14px;
-color:var(--muted);
-font-size:14px;
-font-weight:700
-}
-.card p{margin-top:0}
-.phone{
-display:inline-block;
-margin-top:8px;
-color:var(--blue);
-font-size:27px;
-font-weight:600;
-line-height:1.2;
-text-decoration:none
-}
-.phone:hover{text-decoration:underline}
-.hours{
-margin-top:6px;
-color:var(--muted);
-font-size:14px
-}
-.note{
-padding:14px 15px;
-margin:19px 0 0;
-background:var(--orange-light);
-border-radius:var(--r16);
-font-size:14px;
-line-height:1.5
-}
-.note strong,.callout strong{color:var(--blue-deep)}
-.actions{
-display:flex;
-flex-wrap:wrap;
-align-items:center;
-gap:12px;
-margin-top:24px
-}
-.button{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-min-height:46px;
-padding:11px 20px;
-border:1px solid transparent;
-border-radius:var(--r8);
-text-decoration:none;
-font-size:15px;
-font-weight:600
-}
-.button.primary{
-background:var(--blue);
-color:var(--white)
-}
-.button.primary:hover{
-background:var(--blue-dark);
-color:var(--white)
-}
-.button.orange{
-background:var(--orange);
-color:var(--white)
-}
-.button.orange:hover{
-background:var(--orange-dark);
-color:var(--white)
-}
-.button.outline{
-background:var(--white);
-border-color:var(--blue);
-color:var(--blue)
-}
-.button.outline:hover{background:var(--blue-light)}
-.text-link{
-display:inline-flex;
-align-items:center;
-gap:6px;
-font-weight:600;
-text-decoration:none
-}
-.text-link:after{
-content:"›";
-font-size:21px
-}
-.text-link:hover{text-decoration:underline}
-.funeral-panel{
-background:var(--white);
-border:1px solid var(--border);
-border-radius:var(--r24);
-box-shadow:0 8px 28px rgba(0,71,89,.09);
-overflow:hidden
-}
-.funeral-intro{padding:40px}
-.funeral-intro p{
-max-width:760px;
-margin:0
-}
-.map-wrap{
-margin:0 40px 24px;
-overflow:hidden;
-border:1px solid var(--border);
-border-radius:var(--r16);
-background:var(--white)
-}
-.map-wrap iframe{
-display:block;
-width:100%;
-height:500px;
-border:0
-}
-.callout-wrap{padding:0 40px 8px}
-.callout{
-display:flex;
-gap:15px;
-padding:20px;
-background:var(--orange-light);
-border-radius:var(--r16)
-}
-.info{
-display:flex;
-align-items:center;
-justify-content:center;
-flex:0 0 30px;
-width:30px;
-height:30px;
-margin-top:1px;
-background:var(--orange);
-color:var(--white);
-border-radius:50%;
-font-weight:700
-}
-.callout p{margin:0}
-.accordion-wrap{padding:24px 40px 40px}
-details{
-background:#f9fbfb;
-border:1px solid var(--border);
-border-radius:var(--r16);
-overflow:hidden
-}
-summary{
-position:relative;
-padding:22px 65px 22px 22px;
-color:var(--blue);
-cursor:pointer;
-list-style:none;
-font-size:18px;
-font-weight:600
-}
-summary::-webkit-details-marker{display:none}
-summary:after{
-content:"+";
-position:absolute;
-top:50%;
-right:18px;
-width:34px;
-height:34px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:var(--white);
-border:1px solid var(--blue);
-border-radius:50%;
-transform:translateY(-50%);
-font-size:21px
-}
-details[open] summary{
-border-bottom:1px solid var(--border)
-}
-details[open] summary:after{content:"−"}
-.locations{
-padding:24px 22px 26px;
-background:var(--white)
-}
-.search{
-max-width:610px;
-margin-bottom:22px
-}
-.search label{
-display:block;
-margin-bottom:8px;
-font-size:15px;
-font-weight:600
-}
-.search input{
-width:100%;
-min-height:50px;
-padding:11px 15px;
-border:1px solid #aab8ba;
-border-radius:var(--r8);
-background:var(--white);
-color:var(--text)
-}
-.search input:focus{
-border-color:var(--blue);
-outline:3px solid rgba(0,127,159,.12)
-}
-.table-scroll{
-overflow-x:auto;
-border:1px solid var(--border);
-border-radius:var(--r16)
-}
-table{
-width:100%;
-min-width:800px;
-border-collapse:collapse;
-background:var(--white)
-}
-th,td{
-padding:15px;
-text-align:left;
-vertical-align:top;
-border-bottom:1px solid var(--border)
-}
-th{
-background:var(--blue-light);
-color:var(--blue-deep);
-font-size:14px;
-font-weight:700
-}
-tr:last-child td{border-bottom:0}
-td{font-size:15px}
-td:first-child{
-color:var(--blue-deep);
-font-weight:600
-}
-td a{
-font-weight:600;
-text-decoration:none
-}
-td a:hover{text-decoration:underline}
-.placeholder{
-padding:30px;
-color:var(--muted);
-text-align:center
-}
-.careers{
-display:grid;
-grid-template-columns:1fr auto;
-align-items:center;
-gap:35px;
-padding:40px;
-background:var(--blue);
-color:var(--white);
-border-radius:var(--r24);
-box-shadow:var(--shadow)
-}
-.careers h2{
-margin-bottom:8px;
-color:var(--white)
-}
-.careers p{
-max-width:700px;
-margin:0;
-color:var(--white)
-}
-.careers .button{
-background:var(--white);
-color:var(--blue);
-border-color:var(--white)
-}
-.careers .button:hover{
-background:var(--orange);
-border-color:var(--orange);
-color:var(--white)
-}
-.footer{
-min-height:110px;
-background:var(--blue-deep)
-}
-@media(max-width:950px){
-.contact-grid{grid-template-columns:1fr}
-.card{min-height:auto}
-.careers{grid-template-columns:1fr}
-.careers .button{justify-self:start}
-.map-wrap iframe{height:440px}
-}
-@media(max-width:680px){
-.utility-bar{display:none}
-.header-inner{min-height:70px}
-.logo img{width:96px}
-main{padding-top:24px}
-.hero{border-radius:20px}
-.hero-inner{padding:42px 24px 46px}
-.lead{font-size:17px}
-.section{padding-top:42px}
-.card{padding:28px 22px 24px;border-radius:20px}
-.funeral-panel{border-radius:20px}
-.funeral-intro{padding:28px 22px 20px}
-.map-wrap{margin:0 22px 20px}
-.map-wrap iframe{height:380px}
-.callout-wrap{padding:0 22px 4px}
-.callout{padding:17px}
-.accordion-wrap{padding:20px 22px 24px}
-.locations{padding:20px 16px}
-.careers{padding:30px 22px;border-radius:20px}
-.footer{min-height:80px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>DELA | Maintenance</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://info.dela.be/images/Dela/mailtemplate/lgo_dela.png"
+  >
+
+  <meta
+    name="description"
+    content="De websites van DELA zijn tijdelijk niet beschikbaar wegens gepland technisch onderhoud."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #f3f7f8;
+      color: #3e4547;
+      font: 16px/1.55 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    a {
+      color: #007f9f;
+    }
+
+    a:hover {
+      color: #00677f;
+    }
+
+    button,
+    input,
+    a {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #e99b16;
+      outline-offset: 3px;
+    }
+
+    .c {
+      width: min(calc(100% - 40px), 1180px);
+      margin: auto;
+    }
+
+    .top {
+      background: #004f63;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .top .c {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 30px;
+    }
+
+    .top strong {
+      margin-left: 5px;
+    }
+
+    .head {
+      background: #fff;
+      border-bottom: 1px solid #dce4e5;
+    }
+
+    .head .c {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo img {
+      display: block;
+      width: 112px;
+    }
+
+    .langs {
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      background: #e8f5f7;
+      border-radius: 999px;
+    }
+
+    .langs button {
+      min-width: 44px;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 0;
+      border-radius: 999px;
+      background: none;
+      color: #667174;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .langs button[aria-pressed="true"] {
+      background: #fff;
+      color: #007f9f;
+      box-shadow: 0 1px 5px #0047591f;
+    }
+
+    main {
+      padding: 42px 0 72px;
+    }
+
+    .hero {
+      background: #e8f5f7;
+      border-radius: 28px;
+      box-shadow: 0 3px 12px #0047590f;
+      overflow: hidden;
+    }
+
+    .hero > div {
+      padding: 62px 60px 64px;
+    }
+
+    .ey {
+      margin: 0 0 15px;
+      color: #007f9f;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .ey::before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-right: 9px;
+      background: #e99b16;
+      border-radius: 50%;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      color: #007f9f;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(2.25rem, 5vw, 3.55rem);
+      line-height: 1.06;
+      letter-spacing: -.025em;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      line-height: 1.3;
+    }
+
+    .lead {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    .sec {
+      padding-top: 56px;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 365px;
+      padding: 32px 28px 28px;
+      background: #fff;
+      border: 1px solid #dce4e5;
+      border-radius: 24px;
+      box-shadow: 0 3px 12px #0047590f;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: #007f9f;
+    }
+
+    .card.d::before {
+      background: #e99b16;
+    }
+
+    .card.f::before {
+      background: #74436f;
+    }
+
+    .body {
+      flex: 1;
+    }
+
+    .lab {
+      display: block;
+      margin-bottom: 14px;
+      color: #667174;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .card p {
+      margin-top: 0;
+    }
+
+    .phone {
+      display: inline-block;
+      margin-top: 8px;
+      color: #007f9f;
+      font-size: 27px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+
+    .phone:hover {
+      text-decoration: underline;
+    }
+
+    .hours {
+      margin-top: 6px;
+      color: #667174;
+      font-size: 14px;
+    }
+
+    .note {
+      padding: 14px 15px;
+      margin: 19px 0 0;
+      background: #fff4dc;
+      border-radius: 16px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .note strong {
+      color: #004f63;
+    }
+
+    .act {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 20px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .pri {
+      background: #007f9f;
+      color: #fff;
+    }
+
+    .org {
+      background: #e99b16;
+      color: #fff;
+    }
+
+    .mail {
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .mail::after {
+      content: "›";
+      margin-left: 6px;
+      font-size: 21px;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid #dce4e5;
+      border-radius: 24px;
+      box-shadow: 0 8px 28px #00475917;
+      overflow: hidden;
+    }
+
+    .fi {
+      padding: 40px;
+    }
+
+    .fi p {
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .map {
+      margin: 0 40px 24px;
+      overflow: hidden;
+      border: 1px solid #dce4e5;
+      border-radius: 16px;
+    }
+
+    .map iframe {
+      display: block;
+      width: 100%;
+      height: 500px;
+      border: 0;
+    }
+
+    .aw {
+      padding: 0 40px 40px;
+    }
+
+    details {
+      background: #f9fbfb;
+      border: 1px solid #dce4e5;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    summary {
+      position: relative;
+      padding: 22px 65px 22px 22px;
+      color: #007f9f;
+      cursor: pointer;
+      list-style: none;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 1px solid #007f9f;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      font-size: 21px;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid #dce4e5;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .loc {
+      padding: 24px 22px 26px;
+      background: #fff;
+    }
+
+    .search {
+      max-width: 610px;
+      margin-bottom: 22px;
+    }
+
+    .search label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .search input {
+      width: 100%;
+      min-height: 50px;
+      padding: 11px 15px;
+      border: 1px solid #aab8ba;
+      border-radius: 8px;
+      background: #fff;
+      color: #3e4547;
+    }
+
+    .scroll {
+      overflow-x: auto;
+      border: 1px solid #dce4e5;
+      border-radius: 16px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #dce4e5;
+    }
+
+    th {
+      background: #e8f5f7;
+      color: #004f63;
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td {
+      font-size: 15px;
+    }
+
+    td:first-child {
+      color: #004f63;
+      font-weight: 600;
+    }
+
+    td a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .jobs {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 35px;
+      padding: 40px;
+      background: #007f9f;
+      color: #fff;
+      border-radius: 24px;
+      box-shadow: 0 3px 12px #0047590f;
+    }
+
+    .jobs h2,
+    .jobs p {
+      color: #fff;
+    }
+
+    .jobs p {
+      max-width: 700px;
+      margin: 0;
+    }
+
+    .jobs .btn {
+      background: #fff;
+      color: #007f9f;
+    }
+
+    .foot {
+      min-height: 110px;
+      background: #004f63;
+    }
+
+    @media (max-width: 950px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: auto;
+      }
+
+      .jobs {
+        grid-template-columns: 1fr;
+      }
+
+      .jobs .btn {
+        justify-self: start;
+      }
+
+      .map iframe {
+        height: 440px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .top {
+        display: none;
+      }
+
+      .head .c {
+        min-height: 70px;
+      }
+
+      .logo img {
+        width: 96px;
+      }
+
+      main {
+        padding-top: 24px;
+      }
+
+      .hero {
+        border-radius: 20px;
+      }
+
+      .hero > div {
+        padding: 42px 24px 46px;
+      }
+
+      .lead {
+        font-size: 17px;
+      }
+
+      .sec {
+        padding-top: 42px;
+      }
+
+      .card {
+        padding: 28px 22px 24px;
+        border-radius: 20px;
+      }
+
+      .panel {
+        border-radius: 20px;
+      }
+
+      .fi {
+        padding: 28px 22px 20px;
+      }
+
+      .map {
+        margin: 0 22px 20px;
+      }
+
+      .map iframe {
+        height: 380px;
+      }
+
+      .aw {
+        padding: 0 22px 24px;
+      }
+
+      .loc {
+        padding: 20px 16px;
+      }
+
+      .jobs {
+        padding: 30px 22px;
+        border-radius: 20px;
+      }
+
+      .foot {
+        min-height: 80px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="utility-bar">
-  <div class="container utility-inner">
-    <span class="utility-item"><span data-t="topDeath"></span><strong>078 05 05 78</strong></span>
-    <span class="utility-item"><span data-t="topOther"></span><strong>02 800 87 87</strong></span>
-  </div>
-</div>
+  <div class="top">
+    <div class="c">
+      <span>
+        <span data-t="topDeath"></span>
+        <strong>078 05 05 78</strong>
+      </span>
 
-<header class="header">
-  <div class="container header-inner">
-
-    <div class="logo">
-      <img
-        src="https://info.dela.be/images/Dela/mailtemplate/lgo_dela.png"
-        alt="DELA"
-      >
+      <span>
+        <span data-t="topOther"></span>
+        <strong>02 800 87 87</strong>
+      </span>
     </div>
-
-    <nav class="languages" aria-label="Taal / Langue / Language">
-      <button type="button" data-lang="nl" aria-pressed="true">NL</button>
-      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
-    </nav>
-
-  </div>
-</header>
-
-<main>
-<div class="container">
-
-<section class="hero">
-  <div class="hero-inner">
-
-    <p class="eyebrow" data-t="maintenance"></p>
-
-    <h1 data-t="heroTitle"></h1>
-
-    <p class="lead" data-t="heroDateText"></p>
-
-    <p class="lead" data-t="heroHelp"></p>
-
-  </div>
-</section>
-
-<section class="section">
-
-  <div class="section-heading">
-    <h2 data-t="helpTitle"></h2>
-    <p data-t="helpText"></p>
   </div>
 
-  <div class="contact-grid">
+  <header class="head">
+    <div class="c">
 
-    <article class="card death">
+      <div class="logo">
+        <img
+          src="https://info.dela.be/images/Dela/mailtemplate/lgo_dela.png"
+          alt="DELA"
+        >
+      </div>
 
-      <div class="card-content">
+      <nav class="langs" aria-label="Taal / Langue / Language">
+        <button data-lang="nl" aria-pressed="true">NL</button>
+        <button data-lang="fr" aria-pressed="false">FR</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </nav>
 
-        <span class="label" data-t="deathLabel"></span>
+    </div>
+  </header>
 
-        <h3 data-t="deathTitle"></h3>
+  <main>
+    <div class="c">
 
-        <p data-t="deathText"></p>
+      <section class="hero">
+        <div>
+          <p class="ey" data-t="maintenance"></p>
 
-        <a class="phone" href="tel:+3278050578">
-          078 05 05 78
-        </a>
+          <h1 data-t="heroTitle"></h1>
 
-        <div class="hours">
-          24 / 7
+          <p class="lead" data-t="heroDateText"></p>
+        </div>
+      </section>
+
+      <section class="sec">
+
+        <div class="intro">
+          <h2 data-t="helpTitle"></h2>
         </div>
 
-        <div class="note">
-          <strong data-t="insuredStrong"></strong>
-          <span data-t="insuredText"></span>
+        <div class="grid">
+
+          <!-- Overlijden melden -->
+
+          <article class="card d">
+
+            <div class="body">
+              <span class="lab" data-t="deathLabel"></span>
+
+              <h3 data-t="deathTitle"></h3>
+
+              <p data-t="deathText"></p>
+
+              <a class="phone" href="tel:+3278050578">
+                078 05 05 78
+              </a>
+
+              <div class="hours">
+                24 / 7
+              </div>
+
+              <div class="note">
+                <strong data-t="insuredStrong"></strong>
+                <span data-t="insuredText"></span>
+              </div>
+            </div>
+
+            <div class="act">
+              <a
+                href="tel:+3278050578"
+                class="btn org"
+                data-t="callDela"
+              ></a>
+            </div>
+
+          </article>
+
+          <!-- Uitvaartondernemer -->
+
+          <article class="card f">
+
+            <div class="body">
+              <span class="lab" data-t="funeralLabel"></span>
+
+              <h3 data-t="funeralTitle"></h3>
+
+              <p data-t="funeralText"></p>
+
+              <p>
+                <span data-t="funeralEven"></span>
+                <strong data-t="funeralNotInsured"></strong>.
+              </p>
+            </div>
+
+            <div class="act">
+              <a
+                href="#uitvaartcentra"
+                class="btn pri"
+                data-t="findFuneral"
+              ></a>
+            </div>
+
+          </article>
+
+          <!-- Andere vragen -->
+
+          <article class="card">
+
+            <div class="body">
+              <span class="lab" data-t="customerLabel"></span>
+
+              <h3 data-t="customerTitle"></h3>
+
+              <p data-t="customerText"></p>
+
+              <a class="phone" href="tel:+3228008787">
+                02 800 87 87
+              </a>
+
+              <div class="hours" data-t="customerHours"></div>
+            </div>
+
+            <div class="act">
+              <a
+                href="tel:+3228008787"
+                class="btn pri"
+                data-t="callUs"
+              ></a>
+
+              <a
+                href="mailto:info@dela.be"
+                class="mail"
+              >
+                info@dela.be
+              </a>
+            </div>
+
+          </article>
+
         </div>
+      </section>
 
-      </div>
+      <section class="sec" id="uitvaartcentra">
 
-      <div class="actions">
-        <a
-          href="tel:+3278050578"
-          class="button orange"
-          data-t="callDela"
-        ></a>
-      </div>
+        <div class="panel">
 
-    </article>
-
-
-    <article class="card">
-
-      <div class="card-content">
-
-        <span class="label" data-t="customerLabel"></span>
-
-        <h3 data-t="customerTitle"></h3>
-
-        <p data-t="customerText"></p>
-
-        <a class="phone" href="tel:+3228008787">
-          02 800 87 87
-        </a>
-
-        <div class="hours" data-t="customerHours"></div>
-
-      </div>
-
-      <div class="actions">
-
-        <a
-          href="tel:+3228008787"
-          class="button primary"
-          data-t="callUs"
-        ></a>
-
-        <a
-          href="mailto:info@dela.be"
-          class="text-link"
-        >
-          info@dela.be
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <article class="card funeral">
-
-      <div class="card-content">
-
-        <span class="label" data-t="funeralLabel"></span>
-
-        <h3 data-t="funeralTitle"></h3>
-
-        <p data-t="funeralText"></p>
-
-        <p>
-          <span data-t="funeralEven"></span>
-          <strong data-t="funeralNotInsured"></strong>.
-        </p>
-
-      </div>
-
-      <div class="actions">
-
-        <a
-          href="#uitvaartcentra"
-          class="button outline"
-          data-t="findFuneral"
-        ></a>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<section
-  class="section"
-  id="uitvaartcentra"
->
-
-  <div class="funeral-panel">
-
-    <div class="funeral-intro">
-
-      <h2 data-t="nearTitle"></h2>
-
-      <p data-t="nearText"></p>
-
-    </div>
-
-
-    <div class="map-wrap">
-
-      <iframe
-        src="https://www.google.com/maps/d/embed?mid=14DKKrt9r9X6SNQWIbZDPHr6fBjt4QBg"
-        title="DELA-uitvaartlocaties"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen
-      ></iframe>
-
-    </div>
-
-
-    <div class="callout-wrap">
-
-      <div class="callout">
-
-        <span
-          class="info"
-          aria-hidden="true"
-        >
-          i
-        </span>
-
-        <p>
-          <strong data-t="notInsuredStrong"></strong>
-          <span data-t="notInsuredText1"></span>
-          <strong>078 05 05 78</strong>
-          <span data-t="notInsuredText2"></span>
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="accordion-wrap">
-
-      <details>
-
-        <summary data-t="showLocations"></summary>
-
-        <div class="locations">
-
-          <div class="search">
-
-            <label
-              for="location-search"
-              data-t="searchLabel"
-            ></label>
-
-            <input
-              id="location-search"
-              type="search"
-              autocomplete="off"
-            >
-
+          <div class="fi">
+            <h2 data-t="nearTitle"></h2>
+            <p data-t="nearText"></p>
           </div>
 
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=14DKKrt9r9X6SNQWIbZDPHr6fBjt4QBg"
+              title="DELA-uitvaartlocaties"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
 
-          <div class="table-scroll">
+          <div class="aw">
 
-            <table>
+            <details>
 
-              <thead>
-                <tr>
-                  <th data-t="thName"></th>
-                  <th data-t="thAddress"></th>
-                  <th data-t="thPhone"></th>
-                  <th>E-mail</th>
-                </tr>
-              </thead>
+              <summary data-t="showLocations"></summary>
 
-              <tbody id="location-table">
+              <div class="loc">
 
-                <tr id="location-placeholder">
-                  <td
-                    colspan="4"
-                    class="placeholder"
-                    data-t="placeholder"
-                  ></td>
-                </tr>
+                <div class="search">
 
-              </tbody>
+                  <label
+                    for="q"
+                    data-t="searchLabel"
+                  ></label>
 
-            </table>
+                  <input
+                    id="q"
+                    type="search"
+                    autocomplete="off"
+                  >
+
+                </div>
+
+                <div class="scroll">
+
+                  <table>
+
+                    <thead>
+                      <tr>
+                        <th data-t="thName"></th>
+                        <th data-t="thAddress"></th>
+                        <th data-t="thPhone"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="rows"></tbody>
+
+                  </table>
+
+                </div>
+
+              </div>
+
+            </details>
 
           </div>
 
         </div>
 
-      </details>
+      </section>
+
+      <section class="sec">
+
+        <div class="jobs">
+
+          <div>
+            <h2 data-t="careerTitle"></h2>
+            <p data-t="careerText"></p>
+          </div>
+
+          <a
+            class="btn"
+            href="https://www.werkenbijdela.be/portal-over-het-bedrijf/vind-je-job"
+            target="_blank"
+            rel="noopener"
+            data-t="careerButton"
+          ></a>
+
+        </div>
+
+      </section>
 
     </div>
+  </main>
 
-  </div>
+  <footer class="foot"></footer>
 
-</section>
+  <script>
+    const t = {
+      nl: {
+        topDeath: "Een verzekerd overlijden melden: ",
+        topOther: "Andere vragen: ",
 
+        maintenance: "Gepland technisch onderhoud",
+        heroTitle: "We zijn even offline, maar we blijven er voor jou.",
+        heroDateText: "Op dinsdag 15 september zijn dela.be, rouwwijzer.be, ingedachten.be en alle websites van onze DELA-uitvaartcentra niet beschikbaar wegens gepland technisch onderhoud.",
 
-<section class="section">
+        helpTitle: "Ook tijdens het onderhoud helpen we je graag verder via telefoon of e-mail.",
 
-  <div class="careers">
+        deathLabel: "Overlijden melden",
+        deathTitle: "Is een dierbare met een DELA-uitvaartverzekering overleden?",
+        deathText: "Meld het overlijden rechtstreeks bij DELA. We staan dag en nacht voor je klaar.",
+        insuredStrong: "Dit nummer is specifiek voor verzekerden. ",
+        insuredText: "Gebruik het wanneer de overledene een DELA-uitvaartverzekering heeft.",
+        callDela: "Bel DELA",
 
-    <div>
+        funeralLabel: "Een uitvaart regelen",
+        funeralTitle: "Zoek je een DELA-uitvaartondernemer?",
+        funeralText: "Onze uitvaartondernemers staan voor je klaar wanneer je een uitvaart wil regelen.",
+        funeralEven: "Ook wanneer de overledene",
+        funeralNotInsured: "niet bij DELA verzekerd is",
+        findFuneral: "Vind een uitvaartcentrum",
 
-      <h2 data-t="careerTitle"></h2>
+        customerLabel: "Klantendienst",
+        customerTitle: "Heb je een andere vraag?",
+        customerText: "Onze DELA Klantendienst helpt je graag verder met vragen over je verzekering of onze dienstverlening.",
+        customerHours: "ma–vr · 8.30–17.00 uur",
+        callUs: "Bel ons",
 
-      <p data-t="careerText"></p>
+        nearTitle: "Een uitvaartcentrum in je buurt",
+        nearText: "Wil je een uitvaart regelen of rechtstreeks met een uitvaartondernemer spreken? Kies dan een DELA-uitvaartcentrum in je buurt. Je hoeft hiervoor niet bij DELA verzekerd te zijn.",
 
-    </div>
+        showLocations: "Bekijk alle DELA-uitvaartcentra",
+        searchLabel: "Zoek op uitvaartcentrum, postcode of gemeente",
+        searchPlaceholder: "Bijvoorbeeld Antwerpen, 2000 of Timmermans",
 
-    <a
-      class="button"
-      href="https://www.werkenbijdela.be/portal-over-het-bedrijf/vind-je-job"
-      target="_blank"
-      rel="noopener"
-      data-t="careerButton"
-    ></a>
+        thName: "Uitvaartcentrum",
+        thAddress: "Adres",
+        thPhone: "Telefoon",
 
-  </div>
+        careerTitle: "Werken bij DELA?",
+        careerText: "Onze jobsite blijft bereikbaar. Ontdek onze vacatures en vind de job die bij je past.",
+        careerButton: "Ik wil solliciteren"
+      },
 
-</section>
+      fr: {
+        topDeath: "Signaler un décès assuré : ",
+        topOther: "Autres questions : ",
 
-</div>
-</main>
+        maintenance: "Maintenance technique planifiée",
+        heroTitle: "Nous sommes temporairement hors ligne, mais nous restons à vos côtés.",
+        heroDateText: "Le mardi 15 septembre, dela.be, rouwwijzer.be, ingedachten.be et les sites de nos centres funéraires DELA seront indisponibles en raison d’une maintenance technique planifiée.",
 
+        helpTitle: "Même pendant la maintenance, nous restons à votre disposition par téléphone ou par e-mail.",
 
-<footer
-  class="footer"
-  aria-hidden="true"
-></footer>
+        deathLabel: "Signaler un décès",
+        deathTitle: "Un proche disposant d’une assurance obsèques DELA est décédé ?",
+        deathText: "Signalez le décès directement auprès de DELA. Nous sommes à votre disposition jour et nuit.",
+        insuredStrong: "Ce numéro est spécifiquement destiné aux assurés. ",
+        insuredText: "Utilisez-le si le défunt disposait d’une assurance obsèques DELA.",
+        callDela: "Appelez DELA",
 
+        funeralLabel: "Organiser des funérailles",
+        funeralTitle: "Vous cherchez une entreprise de pompes funèbres DELA ?",
+        funeralText: "Nos entreprises de pompes funèbres sont à votre disposition pour vous aider à organiser les funérailles.",
+        funeralEven: "Même si le défunt",
+        funeralNotInsured: "n’était pas assuré auprès de DELA",
+        findFuneral: "Trouver un centre funéraire",
 
-<script>
-const t={
-nl:{
-topDeath:"Een verzekerd overlijden melden: ",
-topOther:"Andere vragen: ",
-maintenance:"Gepland technisch onderhoud",
-heroTitle:"We zijn even offline, maar we blijven er voor jou.",
-heroDateText:"Op dinsdag 15 september zijn dela.be, rouwwijzer.be, ingedachten.be en alle websites van onze DELA-uitvaartcentra niet beschikbaar wegens gepland technisch onderhoud.",
-heroHelp:"Heb je ons nodig? Ook tijdens het onderhoud helpen we je graag verder via telefoon of e-mail.",
-helpTitle:"Laat ons weten hoe we kunnen helpen",
-helpText:"Kies hieronder wat voor jou van toepassing is.",
-deathLabel:"Overlijden melden",
-deathTitle:"Is een dierbare met een DELA-uitvaartverzekering overleden?",
-deathText:"Meld het overlijden rechtstreeks bij DELA. We staan dag en nacht voor je klaar.",
-insuredStrong:"Dit nummer is specifiek voor verzekerden. ",
-insuredText:"Gebruik het wanneer de overledene een DELA-uitvaartverzekering heeft.",
-callDela:"Bel DELA",
-customerLabel:"Klantendienst",
-customerTitle:"Heb je een andere vraag?",
-customerText:"Onze DELA Klantendienst helpt je graag verder met vragen over je verzekering of onze dienstverlening.",
-customerHours:"ma–vr · 8.30–17.00 uur",
-callUs:"Bel ons",
-funeralLabel:"Een uitvaart regelen",
-funeralTitle:"Zoek je een DELA-uitvaartondernemer?",
-funeralText:"Onze uitvaartondernemers staan voor je klaar wanneer je een uitvaart wil regelen.",
-funeralEven:"Ook wanneer de overledene",
-funeralNotInsured:"niet bij DELA verzekerd is",
-findFuneral:"Vind een uitvaartcentrum",
-nearTitle:"Een uitvaartcentrum in je buurt",
-nearText:"Wil je een uitvaart regelen of rechtstreeks met een uitvaartondernemer spreken? Kies dan een DELA-uitvaartcentrum in je buurt. Je hoeft hiervoor niet bij DELA verzekerd te zijn.",
-notInsuredStrong:"Niet verzekerd bij DELA? ",
-notInsuredText1:"Neem rechtstreeks contact op met een uitvaartondernemer hieronder. Het nummer ",
-notInsuredText2:" is specifiek bedoeld om het overlijden van een DELA-verzekerde te melden.",
-showLocations:"Bekijk alle DELA-uitvaartcentra",
-searchLabel:"Zoek op uitvaartcentrum, postcode of gemeente",
-searchPlaceholder:"Bijvoorbeeld Antwerpen, 2000 of Timmermans",
-thName:"Uitvaartcentrum",
-thAddress:"Adres",
-thPhone:"Telefoon",
-placeholder:"De lijst met uitvaartcentra wordt hier toegevoegd vanuit het Excelbestand.",
-careerTitle:"Werken bij DELA?",
-careerText:"Onze jobsite blijft bereikbaar. Ontdek onze vacatures en vind de job die bij je past.",
-careerButton:"Ik wil solliciteren"
-},
-fr:{
-topDeath:"Signaler un décès assuré : ",
-topOther:"Autres questions : ",
-maintenance:"Maintenance technique planifiée",
-heroTitle:"Nous sommes temporairement hors ligne, mais nous restons à vos côtés.",
-heroDateText:"Le mardi 15 septembre, dela.be, rouwwijzer.be, ingedachten.be et les sites de nos centres funéraires DELA seront indisponibles en raison d’une maintenance technique planifiée.",
-heroHelp:"Vous avez besoin de nous ? Nous restons disponibles par téléphone ou par e-mail.",
-helpTitle:"Dites-nous comment nous pouvons vous aider",
-helpText:"Choisissez la situation qui vous concerne.",
-deathLabel:"Signaler un décès",
-deathTitle:"Un proche disposant d’une assurance obsèques DELA est décédé ?",
-deathText:"Signalez le décès directement auprès de DELA. Nous sommes à votre disposition jour et nuit.",
-insuredStrong:"Ce numéro est spécifiquement destiné aux assurés. ",
-insuredText:"Utilisez-le si le défunt disposait d’une assurance obsèques DELA.",
-callDela:"Appelez DELA",
-customerLabel:"Service client",
-customerTitle:"Vous avez une autre question ?",
-customerText:"Le Service client DELA se fera un plaisir de vous aider.",
-customerHours:"lun–ven · 8h30–17h00",
-callUs:"Appelez-nous",
-funeralLabel:"Organiser des funérailles",
-funeralTitle:"Vous cherchez une entreprise de pompes funèbres DELA ?",
-funeralText:"Nos entreprises de pompes funèbres sont à votre disposition pour vous aider à organiser les funérailles.",
-funeralEven:"Même si le défunt",
-funeralNotInsured:"n’était pas assuré auprès de DELA",
-findFuneral:"Trouver un centre funéraire",
-nearTitle:"Un centre funéraire près de chez vous",
-nearText:"Vous souhaitez organiser des funérailles ou parler directement à une entreprise de pompes funèbres ? Choisissez un centre funéraire DELA près de chez vous. Il n’est pas nécessaire d’être assuré auprès de DELA.",
-notInsuredStrong:"Pas assuré auprès de DELA ? ",
-notInsuredText1:"Contactez directement l’un des centres funéraires ci-dessous. Le ",
-notInsuredText2:" est spécifiquement destiné à signaler le décès d’une personne assurée auprès de DELA.",
-showLocations:"Voir tous les centres funéraires DELA",
-searchLabel:"Recherchez par centre funéraire, code postal ou commune",
-searchPlaceholder:"Par exemple Anvers, 2000 ou Timmermans",
-thName:"Centre funéraire",
-thAddress:"Adresse",
-thPhone:"Téléphone",
-placeholder:"La liste des centres funéraires sera ajoutée ici à partir du fichier Excel.",
-careerTitle:"Travailler chez DELA ?",
-careerText:"Notre site d’emploi reste accessible. Découvrez nos offres d’emploi.",
-careerButton:"Je veux postuler"
-},
-en:{
-topDeath:"Report an insured death: ",
-topOther:"Other questions: ",
-maintenance:"Scheduled technical maintenance",
-heroTitle:"We are temporarily offline, but we are still here for you.",
-heroDateText:"On Tuesday 15 September, dela.be, rouwwijzer.be, ingedachten.be and the websites of our DELA funeral homes will be unavailable due to scheduled technical maintenance.",
-heroHelp:"Need us? We remain available by phone or e-mail.",
-helpTitle:"Tell us how we can help",
-helpText:"Choose the option that applies to you.",
-deathLabel:"Report a death",
-deathTitle:"Has a loved one with DELA funeral insurance passed away?",
-deathText:"Report the death directly to DELA. We are available day and night.",
-insuredStrong:"This number is specifically for insured customers. ",
-insuredText:"Use it if the deceased had DELA funeral insurance.",
-callDela:"Call DELA",
-customerLabel:"Customer service",
-customerTitle:"Do you have another question?",
-customerText:"DELA Customer Service will be happy to assist you.",
-customerHours:"Mon–Fri · 8:30–17:00",
-callUs:"Call us",
-funeralLabel:"Arrange a funeral",
-funeralTitle:"Looking for a DELA funeral director?",
-funeralText:"Our funeral directors are here to help you arrange a funeral.",
-funeralEven:"Even if the deceased",
-funeralNotInsured:"was not insured with DELA",
-findFuneral:"Find a funeral home",
-nearTitle:"A funeral home near you",
-nearText:"If you would like to arrange a funeral or speak directly to a funeral director, choose a DELA funeral home near you. You do not need to be insured with DELA.",
-notInsuredStrong:"Not insured with DELA? ",
-notInsuredText1:"Contact one of the funeral homes below directly. ",
-notInsuredText2:" is specifically intended for reporting the death of a person insured with DELA.",
-showLocations:"View all DELA funeral homes",
-searchLabel:"Search by funeral home, postcode or town",
-searchPlaceholder:"For example Antwerp, 2000 or Timmermans",
-thName:"Funeral home",
-thAddress:"Address",
-thPhone:"Phone",
-placeholder:"The list of funeral homes will be added here from the Excel file.",
-careerTitle:"Work at DELA?",
-careerText:"Our careers website remains available. Explore our current vacancies.",
-careerButton:"View our jobs"
-}
-};
+        customerLabel: "Service client",
+        customerTitle: "Vous avez une autre question ?",
+        customerText: "Le Service client DELA se fera un plaisir de vous aider.",
+        customerHours: "lun–ven · 8h30–17h00",
+        callUs: "Appelez-nous",
 
-const locations=[
-/*
-["DELA Uitvaartzorg Timmermans","Straat 1, 2000 Antwerpen","03 123 45 67","info@voorbeeld.be"]
-*/
-];
+        nearTitle: "Un centre funéraire près de chez vous",
+        nearText: "Vous souhaitez organiser des funérailles ou parler directement à une entreprise de pompes funèbres ? Choisissez un centre funéraire DELA près de chez vous. Il n’est pas nécessaire d’être assuré auprès de DELA.",
 
-function setLang(lang){
-document.documentElement.lang=lang;
+        showLocations: "Voir tous les centres funéraires DELA",
+        searchLabel: "Recherchez par centre funéraire, code postal ou commune",
+        searchPlaceholder: "Par exemple Anvers, 2000 ou Timmermans",
 
-document.querySelectorAll("[data-t]").forEach(el=>{
-const key=el.dataset.t;
-if(t[lang][key]!=null)el.textContent=t[lang][key];
-});
+        thName: "Centre funéraire",
+        thAddress: "Adresse",
+        thPhone: "Téléphone",
 
-document.querySelectorAll("[data-lang]").forEach(b=>{
-b.setAttribute(
-"aria-pressed",
-b.dataset.lang===lang?"true":"false"
-);
-});
+        careerTitle: "Travailler chez DELA ?",
+        careerText: "Notre site d’emploi reste accessible. Découvrez nos offres d’emploi.",
+        careerButton: "Je veux postuler"
+      },
 
-document.getElementById("location-search").placeholder=
-t[lang].searchPlaceholder;
-}
+      en: {
+        topDeath: "Report an insured death: ",
+        topOther: "Other questions: ",
 
-function renderLocations(filter=""){
-const body=document.getElementById("location-table");
-const q=filter.trim().toLowerCase();
-const lang=document.documentElement.lang;
+        maintenance: "Scheduled technical maintenance",
+        heroTitle: "We are temporarily offline, but we are still here for you.",
+        heroDateText: "On Tuesday 15 September, dela.be, rouwwijzer.be, ingedachten.be and the websites of our DELA funeral homes will be unavailable due to scheduled technical maintenance.",
 
-if(!locations.length){
-body.innerHTML=
-'<tr><td colspan="4" class="placeholder">'+
-t[lang].placeholder+
-'</td></tr>';
-return;
-}
+        helpTitle: "Even during maintenance, we are happy to help you by phone or e-mail.",
 
-body.innerHTML=locations
-.filter(r=>!q||r.join(" ").toLowerCase().includes(q))
-.map(r=>`<tr>
-<td>${r[0]}</td>
-<td>${r[1]}</td>
-<td><a href="tel:${r[2].replace(/[^\d+]/g,"")}">${r[2]}</a></td>
-<td><a href="mailto:${r[3]}">${r[3]}</a></td>
-</tr>`)
-.join("");
-}
+        deathLabel: "Report a death",
+        deathTitle: "Has a loved one with DELA funeral insurance passed away?",
+        deathText: "Report the death directly to DELA. We are available day and night.",
+        insuredStrong: "This number is specifically for insured customers. ",
+        insuredText: "Use it if the deceased had DELA funeral insurance.",
+        callDela: "Call DELA",
 
-document.querySelectorAll("[data-lang]").forEach(b=>{
-b.addEventListener("click",()=>{
-setLang(b.dataset.lang);
-renderLocations(
-document.getElementById("location-search").value
-);
-});
-});
+        funeralLabel: "Arrange a funeral",
+        funeralTitle: "Looking for a DELA funeral director?",
+        funeralText: "Our funeral directors are here to help you arrange a funeral.",
+        funeralEven: "Even if the deceased",
+        funeralNotInsured: "was not insured with DELA",
+        findFuneral: "Find a funeral home",
 
-document
-.getElementById("location-search")
-.addEventListener("input",e=>{
-renderLocations(e.target.value);
-});
+        customerLabel: "Customer service",
+        customerTitle: "Do you have another question?",
+        customerText: "DELA Customer Service will be happy to assist you.",
+        customerHours: "Mon–Fri · 8:30–17:00",
+        callUs: "Call us",
 
-setLang("nl");
-renderLocations();
-</script>
+        nearTitle: "A funeral home near you",
+        nearText: "If you would like to arrange a funeral or speak directly to a funeral director, choose a DELA funeral home near you. You do not need to be insured with DELA.",
+
+        showLocations: "View all DELA funeral homes",
+        searchLabel: "Search by funeral home, postcode or town",
+        searchPlaceholder: "For example Antwerp, 2000 or Timmermans",
+
+        thName: "Funeral home",
+        thAddress: "Address",
+        thPhone: "Phone",
+
+        careerTitle: "Work at DELA?",
+        careerText: "Our careers website remains available. Explore our current vacancies.",
+        careerButton: "View our jobs"
+      }
+    };
+
+    const locations = [
+      ["Uitvaartzorg Van Tendeloo DELA", "Langestraat, 28, 2240 Zandhoven", "03 481 82 80"],
+      ["Uitvaartzorg Thibaut DELA", "Befferstraat, 19, 2800 Mechelen", "015 20 45 00"],
+      ["Uitvaartzorg Hofmans DELA", "Kapellensteenweg, 205-207, 2920 Kalmthout", "03 669 62 66"],
+      ["Uitvaartzorg Ketelaars DELA", "Guyotlei, 9, 2950 Kapellen", "03 664 20 58"],
+      ["Uitvaartzorg Lambrecht-Marote DELA", "A. Rodenbachstraat, 14, 8370 Blankenberge", "050 41 11 27"],
+      ["Uitvaartzorg Appeltants DELA", "Petrus Turcksinstraat, 33, 1830 Machelen", "02 251 44 15"],
+      ["Uitvaartzorg Hofmans DELA", "Loenhoutseweg, 4, 2320 Hoogstraten", "03 669 62 66"],
+      ["Uitvaartzorg Bogaerts - Stynen DELA", "Handelslei, 24, 2980 Zoersel", "03 383 17 71"],
+      ["Uitvaartzorg Vercruysse DELA", "Ballingenweg 16, 8530 Harelbeke", "056 71 23 77"],
+      ["Uitvaartzorg Lambrecht-Marote DELA", "Bredeweg, 40, 8420 De Haan", "050 41 11 27"],
+      ["Uitvaartzorg Luyts DELA", "Stationsstraat, 184, 2910 Essen", "03 667 55 29"],
+      ["Uitvaartzorg Remans-Lantmeeters DELA", "Hoogstraat, 83-87-89, 3600 Genk", "089 35 27 92"],
+      ["Uitvaartzorg Harry - Permentier DELA", "Aarschotsesteenweg, 74, 3300 Tienen", "016 81 16 28"],
+      ["Uitvaartzorg Van Tendeloo DELA", "Elsendonkstraat, 40, 2560 Nijlen", "03 481 82 80"],
+      ["Uitvaartzorg Amez DELA", "Olmstraat, 15, 8790 Waregem", "056 60 30 00"],
+      ["Uitvaartzorg Van De Vyver DELA", "Lijsterstraat 52, 9870 Zulte", "09 388 79 21"],
+      ["Uitvaartzorg Ackaert - Vanheste DELA", "Blankenbergse Steenweg, 14, 8000 Brugge", "050 31 09 19"],
+      ["Uitvaartzorg Van Dooren - Claessen DELA", "Roggestraat, 4, 2350 Vosselaar", "014 41 52 41"],
+      ["Uitvaartzorg Verheyden DELA", "Lambroekstraat, 50, 9230 Massemen", "09 366 19 92"],
+      ["Uitvaartzorg Bleyaert DELA", "Moerkerkse Steenweg, 77, 8310 Sint-Kruis", "050 35 18 46"],
+      ["Uitvaartzorg Smeets DELA", "Hendrik van Veldekesingel, 38, 3500 Hasselt", "011 28 35 88"],
+      ["Uitvaartzorg Vanhooren DELA", "Heyvaertlaan, 10, 8470 Gistel", "059 27 82 96"],
+      ["Uitvaartzorg Smeets DELA - Diepenbeek", "Steenweg 132, 3590 Diepenbeek", "011 22 28 88"],
+      ["Uitvaartzorg Severens DELA", "Schansstraat, 4, 3920 Lommel", "011 55 16 55"],
+      ["Uitvaartzorg Verschooten DELA", "Dorp 3, 2820 Bonheiden", "015 51 48 35"],
+      ["Uitvaartzorg Eugène Timmermans DELA", "Antwerpsestraat, 49, 2640 Mortsel", "03 440 52 19"],
+      ["Uitvaartzorg Van Dooren - Claessen DELA", "Molenstraat, 39, 2300 Turnhout", "014 41 52 41"],
+      ["Uitvaartzorg Severens DELA", "Leopoldlaan, 53, 3900 Overpelt", "011 64 20 90"],
+      ["Uitvaartzorg Bleyaert DELA", "Kalvekeetdijk, 181a, 8300 Knokke-Heist", "050 60 56 05"],
+      ["Uitvaartzorg Barthels DELA", "Joseph Smeetslaan, 74, 3630 Maasmechelen", "089 76 13 26"],
+      ["Uitvaartzorg Vangrunderbeek DELA", "Stationsstraat, 69, 1930 Zaventem", "02 725 40 00"],
+      ["Uitvaartzorg Rongé DELA", "Kerkhofstraat, 411, 2850 Boom", "03 888 13 76"],
+      ["Uitvaartzorg Werbrouck DELA", "Bruanestraat, 27, 8800 Roeselare", "051 25 16 35"],
+      ["Uitvaartzorg Jaeken DELA", "Kerkstraat, 3, 3990 Peer", "011 63 16 94"],
+      ["Uitvaartzorg Kesteloot DELA", "Koksijdestraat, 3, 8630 Veurne", "058 31 36 60"],
+      ["Uitvaartzorg Barthels DELA", "Europalaan, 68, 3650 Dilsen-Stokkem", "089 76 13 26"],
+      ["Uitvaartzorg De Smedt DELA", "Markgravelei 41B, 2018 Antwerpen", "03 231 45 90"],
+      ["Uitvaartzorg Thibaut DELA", "Brusselsesteenweg, 6a, 2800 Mechelen", "015 41 24 09"],
+      ["Uitvaartzorg Eugène Timmermans DELA", "Markgravelei 41A, 2018 Antwerpen", "03 440 52 19"],
+      ["Uitvaartzorg Couffez DELA", "Kortrijksestraat, 488, 8020 Ruddervoorde", "050 27 74 31"],
+      ["Uitvaartzorg Sneyders DELA", "Beekakkersstraat, 17, 2340 Beerse", "014 61 12 56"],
+      ["Uitvaartzorg Eugène Timmermans DELA", "Fruithoflaan, 5, 2600 Berchem", "03 440 52 19"],
+      ["Uitvaartzorg Middenkust DELA", "Stuiverstraat, 470, 8400 Oostende", "059 70 63 63"],
+      ["Uitvaartzorg Vercruysse DELA", "Marktstraat, 47, 8530 Harelbeke", "056 71 23 77"],
+      ["Uitvaartzorg Hofmans DELA", "Dorpsstraat, 85, 2990 Wuustwezel", "03 669 62 66"],
+      ["Uitvaartzorg Vanoppen-Moors DELA", "Kerkstraat, 3, 3665 As", "089 65 71 94"],
+      ["Uitvaartzorg Barthels DELA", "Stationsstraat, 117, 3620 Lanaken", "089 71 40 87"],
+      ["Uitvaartzorg Forrier DELA", "Lange Molensstraat 28, 1800 Vilvoorde", "02 251 03 06"],
+      ["Uitvaartzorg Vanoppen-Moors DELA", "Weg naar As, 6, 3660 Opglabbeek", "089 65 71 94"],
+      ["Uitvaartzorg Deborre DELA", "Oostlaan, 56a, 3600 Genk", "089 35 53 36"],
+      ["Uitvaartzorg Smedts-Jacobs DELA", "Jules Moretuslei, 235-237, 2610 Wilrijk", "03 827 12 81"],
+      ["Uitvaartzorg Harry - Permentier DELA", "Kumtichstraat, 2, 3300 Tienen", "016 81 16 28"],
+      ["Uitvaartzorg Eugène Timmermans DELA", "Oosterveldlaan, 31, 2610 Wilrijk", "03 440 52 19"],
+
+      ["Centre Funéraire Dethier DELA", "Avenue des Ardennes, 162, 4130 Tilff", "04 343 76 10"],
+      ["Centre Funéraire Dethier DELA", "Boulevard Emile de Laveleye, 159, 4020 Liège", "04 343 76 10"],
+      ["Centre Funéraire Warzée DELA", "Rue des Ecoles, 7b, 5300 Seilles", "085 82 31 35"],
+      ["Centre Funéraire Georis DELA", "Boulevard Galilée, 104, 4100 Seraing", "04 336 25 76"],
+      ["Centre Funéraire Dethier DELA", "Rue de la Vaussale, 31, 4031 Angleur", "04 343 76 10"],
+      ["Centre Funéraire Charles - Renard DELA", "Avenue Dewiest, 86, 6180 Courcelles", "071 45 06 98"],
+      ["Centre Funéraire Laloux - Chaudoir DELA", "Avenue du Camp, 21, 5100 Namur", "081 73 75 45"],
+      ["Centre Funéraire Dubois-Tanier DELA", "Chaussée de Tirlemont, 91/1, 4520 Wanze", "085 21 34 52"],
+      ["Centre Funéraire Bemelmans DELA", "Rue Emile Vandervelde, 20-22, 4051 Vaux-sous-Chèvremont", "04 336 59 29"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Quai de l'Ourthe, 20, 4170 Comblain-au-Pont", "084 46 62 11"],
+      ["Centre Funéraire Dethier DELA", "Rue de Meuse, 17, 4020 Liège", "04 343 76 10"],
+      ["Centre Funéraire Bemelmans DELA", "Rue Auguste Buisseret, 60, 4000 Liège", "04 336 59 29"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Avenue d'Alost, 6A, 5580 Rochefort", "084 46 62 11"],
+      ["Centre Funéraire Bemelmans DELA", "Rue Famelette, 105, 4102 Ougrée", "04 336 59 29"],
+      ["Centre Funéraire Largefeuille DELA", "Rue Surlet, 24-26, 4020 Liège", "04 343 23 85"],
+      ["Centre Funéraire Bemelmans DELA", "Rue de la Reine Astrid, 25a, 4100 Seraing", "04 336 59 29"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Rue de la Girafe, 84A, 6832 Sensenruth", "061 46 65 05"],
+      ["Centre Funéraire Georis DELA", "Tige Manchère, 11, 4120 Neupré", "04 336 25 76"],
+      ["Centre Funéraire Dethier DELA", "Rue Bureau, 30, 4621 Fléron", "04 343 76 10"],
+      ["Centre Funéraire Charles - Renard DELA", "Place du Chef-Lieu, 10, 6040 Jumet", "071 31 36 62"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Avenue de la Gare, 117, 6990 Hotton", "084 46 62 11"],
+      ["Centre Funéraire Louis DELA", "Rue Toussaint Gerkens, 2, 4052 Beaufays", "04 368 66 66"],
+      ["Centre Funéraire Charles - Renard DELA", "Place Try Colau, 6042 Charleroi", "071 31 36 62"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Place des Déportés, 2, 5580 Jemelle", "084 46 62 11"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Route de Marche, 60, 6940 Durbuy", "084 46 62 11"],
+      ["Centre Funéraire Warzée DELA", "Place Félix Moinnil, 279, 5300 Andenne", "085 82 31 35"],
+      ["Centre Funéraire Marion DELA", "Rue Frisles, 3, 5537 Bioul", "071 79 95 97"],
+      ["Centre Funéraire De Lahaye DELA", "Rue Surlet, 24-26, 4020 Liège", "04 343 23 85"],
+      ["Centre Funéraire Dethier DELA", "Rue de Gaillarmont, 6, 4032 Chênée", "04 343 76 10"],
+      ["Centre Funéraire Dubois-Tanier DELA", "Avenue de la Croix-Rouge, 2, 4500 Tihange", "085 21 18 64"],
+      ["Centre Funéraire Warzée DELA", "Rue Marche en Pré, 24, 5300 Sclayn", "085 82 31 35"],
+      ["Centre Funéraire Dubois - Tanier DELA", "Rue de Tantonville, 10, 4557 Tinlot", "085 21 34 52"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Rue du Cimetière, 4180 Hamoir", "084 46 62 11"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Rue Erène, 9, 6900 Marche-en-Famenne", "084 46 62 11"],
+      ["Centre Funéraire Charles - Renard DELA", "Rue Puissant, 351, 6040 Jumet", "071 31 36 62"],
+      ["Centre Funéraire Laloux - Chaudoir DELA", "Rue du Belvédère, 36-38, 5000 Namur", "081 73 75 45"],
+      ["Centre Funéraire Marion DELA", "Rue Hennevauche, 22, 5640 Mettet", "071 79 95 97"],
+      ["Centre Funéraire Bemelmans DELA", "Rue des Français, 193, 4430 Ans", "04 336 59 29"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Place del Cour, 22, 4180 Hamoir", "084 46 62 11"],
+      ["Centre Funéraire Bottin DELA", "Rue de Herve, 544, 4610 Beyne-Heusay", "04 227 34 10"],
+      ["Centre Funéraire Duvivier DELA", "Chaussée Brunehault, 44, 7140 Morlanwelz", "064 44 44 44"],
+      ["Centre Funéraire Dethier DELA", "Avenue des Trois Couronnes, 9, 4130 Esneux", "04 343 76 10"],
+      ["Centre Funéraire Dethier DELA", "Voie de l'Ardenne, 177, 4053 Embourg", "04 343 76 10"],
+      ["Centre Funéraire Dethier DELA", "Rue de Herve, 65-67-69, 4030 Liège", "04 343 76 10"],
+      ["Centre Funéraire Bemelmans DELA", "Rue Grand'Rue, 41, 4870 Trooz", "04 336 59 29"],
+      ["Centre Funéraire Warzée DELA", "Rue Dozin, 42, 5300 Andenne", "085 82 31 35"],
+      ["Centre Funéraire Charles - Renard DELA", "Place Louis de Gonzague, 1-3-5, 6031 Monceau-sur-Sambre", "071 31 36 62"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Square Crépin, 5, 5580 Rochefort", "084 46 62 11"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Rue du Vieux Château, 4, 4160 Anthisnes", "084 46 62 11"],
+      ["Céntre Funéraire Bemelmans DELA", "Rue Lemonnier, 1A, 4100 Seraing", "04 336 59 29"],
+      ["Centre Funéraire Marion DELA", "Rue Sur Champt, 1/a, 5530 Yvoir", "071 79 95 97"],
+      ["Centre Funéraire Georis DELA", "Rue du Pairay, 82-86, 4100 Seraing", "04 336 25 76"],
+      ["Centre Funéraire Pol Laffut & Heerwegh DELA", "Rue de Gedinne, 16A, 6920 Wellin", "084 46 62 11"],
+      ["Centre Funéraire Charles-Renard DELA", "Rue de Mons 129, 6140 Fontaine-l'Évêque", "071 31 36 62"],
+      ["Centre Funéraire Bottin DELA", "Avenue des Martyrs, 170, 4620 Fléron", "04 227 34 10"],
+      ["Centre Funéraire Laloux - Chaudoir DELA", "Chaussée de Louvain, 764, 5020 Namur", "081 73 75 45"]
+    ];
+
+    function setLanguage(language) {
+      document.documentElement.lang = language;
+
+      document.querySelectorAll("[data-t]").forEach(element => {
+        const key = element.dataset.t;
+
+        if (t[language][key] !== undefined) {
+          element.textContent = t[language][key];
+        }
+      });
+
+      document.querySelectorAll("[data-lang]").forEach(button => {
+        button.setAttribute(
+          "aria-pressed",
+          button.dataset.lang === language ? "true" : "false"
+        );
+      });
+
+      document.getElementById("q").placeholder =
+        t[language].searchPlaceholder;
+    }
+
+    function renderLocations(search = "") {
+      const query = search.trim().toLowerCase();
+
+      const filteredLocations = locations.filter(location =>
+        !query ||
+        location.join(" ").toLowerCase().includes(query)
+      );
+
+      document.getElementById("rows").innerHTML =
+        filteredLocations.map(location => {
+          const name = location[0];
+          const address = location[1];
+          const phone = location[2];
+          const telephoneLink = phone.replace(/[^\d+]/g, "");
+
+          return `
+            <tr>
+              <td>${name}</td>
+              <td>${address}</td>
+              <td>
+                <a href="tel:${telephoneLink}">
+                  ${phone}
+                </a>
+              </td>
+            </tr>
+          `;
+        }).join("");
+    }
+
+    document.querySelectorAll("[data-lang]").forEach(button => {
+      button.addEventListener("click", () => {
+        setLanguage(button.dataset.lang);
+      });
+    });
+
+    document
+      .getElementById("q")
+      .addEventListener("input", event => {
+        renderLocations(event.target.value);
+      });
+
+    setLanguage("nl");
+    renderLocations();
+  </script>
 
 </body>
 </html>
