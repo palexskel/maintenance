@@ -165,6 +165,10 @@ line-height:1.6
 
 .sec{padding-top:56px}
 
+.sec.no-padding{
+  padding-top: 0px
+}
+
 .intro{
 max-width:900px;
 margin-bottom:28px
@@ -457,7 +461,6 @@ color:#007f9f
 .legal {
   display:grid;
   align-items:center;
-  gap:10px;
   padding:10px;
 }
 
@@ -817,9 +820,9 @@ min-height:80px
 
   </section>
 
-  <section class="sec">
+  <section class="sec no-padding">
     <div class="legal">
-      <p data-t="legalTitle">-strong></strong></p>
+      <p><strong data-t="legalTitle"></strong></p>
       <small data-t="legalText1"></small>
       <small data-t="legalText2"></small>
       <ul>
